@@ -64,7 +64,7 @@ export default function Home() {
             <p className="mt-4 inline-flex rounded-full bg-green-50 px-4 py-2 text-sm font-black text-brandGreen">
               No prior experience required
             </p>
-            <p className="ml-0 mt-3 inline-flex rounded-full bg-accent px-4 py-2 text-sm font-black text-primary shadow-sm sm:ml-3">
+            <p className="ml-0 mt-3 inline-flex rounded-full bg-primary px-4 py-2 text-sm font-black text-white shadow-sm sm:ml-3">
               Limited Seats Available
             </p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
@@ -73,7 +73,7 @@ export default function Home() {
             </div>
             <div className="mt-8 grid grid-cols-2 gap-3 sm:grid-cols-5">
               {heroPoints.map((badge) => (
-                <div key={badge} className={`rounded-2xl border border-white px-3 py-3 text-center text-xs font-black text-primary shadow-sm ${badge === "Limited Seats Available" ? "bg-accent" : "bg-white/85"}`}>
+                <div key={badge} className={`rounded-2xl border border-white px-3 py-3 text-center text-xs font-black shadow-sm ${badge === "Limited Seats Available" ? "bg-brandGreen text-white" : "bg-white/85 text-primary"}`}>
                   {badge}
                 </div>
               ))}
@@ -90,7 +90,7 @@ export default function Home() {
                 </div>
               </div>
             </div>
-            <div className="absolute -left-4 top-8 hidden rounded-2xl bg-accent px-5 py-4 text-sm font-black text-primary shadow-lg sm:block">
+            <div className="absolute -left-4 top-8 hidden rounded-2xl bg-brandGreen px-5 py-4 text-sm font-black text-white shadow-lg sm:block">
               Live Workshop
             </div>
           </div>
@@ -147,7 +147,7 @@ export default function Home() {
           <div className="grid gap-5 md:grid-cols-3">
             {flow.map((item, index) => (
               <div key={item} className="rounded-3xl bg-primary p-6 text-white shadow-premium">
-                <p className="grid h-12 w-12 place-items-center rounded-2xl bg-accent text-xl font-black text-primary">{index + 1}</p>
+                <p className="grid h-12 w-12 place-items-center rounded-2xl bg-brandGreen text-xl font-black text-white">{index + 1}</p>
                 <h3 className="mt-8 text-2xl font-black">{item}</h3>
                 <p className="mt-3 text-sm leading-6 text-blue-50">A clear, guided step that keeps the learning process simple and action-focused.</p>
               </div>
@@ -252,7 +252,7 @@ export default function Home() {
           <div className="grid gap-5 md:grid-cols-3">
             {["AI Projects", "Internship projects", "Real-world project gallery"].map((project, index) => (
               <div key={project} className="min-h-64 rounded-3xl bg-primary p-6 text-white shadow-premium tech-grid">
-                <p className="inline-flex rounded-full bg-accent px-4 py-2 text-xs font-black text-primary">Project {index + 1}</p>
+                <p className="inline-flex rounded-full bg-brandGreen px-4 py-2 text-xs font-black text-white">Project {index + 1}</p>
                 <h3 className="mt-20 text-2xl font-black">{project}</h3>
                 <p className="mt-3 text-sm leading-6 text-blue-50">Guided project work with practical problem statements and presentation-ready outcomes.</p>
               </div>

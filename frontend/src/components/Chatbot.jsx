@@ -171,7 +171,7 @@ export default function Chatbot() {
           </div>
           <div className="flex border-t border-slate-100 p-3">
             <input value={input} onChange={(event) => setInput(event.target.value)} onKeyDown={(event) => event.key === "Enter" && send()} className="min-w-0 flex-1 rounded-l-xl border border-slate-200 px-3 py-2 text-sm outline-none focus:border-secondary" placeholder={mode === "idle" ? "Ask or select option" : "Type your answer"} />
-            <button type="button" onClick={() => send()} disabled={loading} className="grid w-12 place-items-center rounded-r-xl bg-accent text-primary disabled:opacity-60">
+            <button type="button" onClick={() => send()} disabled={loading} className="grid w-12 place-items-center rounded-r-xl bg-brandGreen text-white disabled:opacity-60">
               <Send size={17} />
             </button>
           </div>
