@@ -41,13 +41,10 @@ export default function Footer() {
         </div>
         <div>
           <p className="font-bold text-accent">Connect</p>
-          <div className="mt-4 grid gap-3">
+          <div className="mt-4 flex items-center gap-4">
             {socialLinks.map(([label, href, icon, alt]) => (
-              <a key={label} aria-label={label} className="inline-flex items-center gap-3 rounded-2xl bg-white px-4 py-3 text-sm font-black text-primary shadow-sm transition hover:-translate-y-1 hover:bg-accent" href={href} target={href.startsWith("http") ? "_blank" : undefined} rel={href.startsWith("http") ? "noreferrer" : undefined}>
-                <span className="grid h-10 w-10 place-items-center rounded-full bg-white shadow-sm ring-1 ring-slate-100">
-                  <img src={icon} alt={alt} loading="lazy" decoding="async" className="h-6 w-6 object-contain" />
-                </span>
-                {label}
+              <a key={label} aria-label={label} className="transition hover:-translate-y-1 hover:opacity-80" href={href} target={href.startsWith("http") ? "_blank" : undefined} rel={href.startsWith("http") ? "noreferrer" : undefined}>
+                <img src={icon} alt={alt} loading="lazy" decoding="async" className="h-8 w-8 object-contain" />
               </a>
             ))}
           </div>
