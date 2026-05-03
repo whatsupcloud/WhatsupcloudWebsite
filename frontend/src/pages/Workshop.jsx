@@ -1,4 +1,4 @@
-﻿import { Bot, BrainCircuit, Building2, Cpu, GraduationCap, Image, Megaphone, Palette, Sparkles, Target, Workflow } from "lucide-react";
+﻿import { Bot, BrainCircuit, Building2, Cpu, GraduationCap, Megaphone, Palette, Sparkles, Target, Workflow } from "lucide-react";
 import { Link } from "react-router-dom";
 import SectionTitle from "../components/SectionTitle.jsx";
 import courseData from "../assets/showcase/course-data.jpg";
@@ -13,12 +13,12 @@ import placementResume from "../assets/showcase/placement-resume.jpg";
 
 export default function Workshop() {
   const workshops = [
-    ["Generative AI Workshop", BrainCircuit, "GenAI fundamentals, tools, real use cases and hands-on practice."],
-    ["Prompt Engineering Workshop", Bot, "Prompt structure, role prompts, templates and output improvement."],
-    ["AI Digital Marketing Workshop", Megaphone, "AI content, posters, campaigns, social media and lead systems."],
-    ["AI Automation Workshop", Workflow, "No-code workflows, task automation and business productivity."],
-    ["AI for Business Workshop", Building2, "AI adoption, team productivity, customer support and reporting use cases."],
-    ["AI Content Creation Workshop", Palette, "Images, captions, reels, blogs, presentations and brand content."]
+    ["Generative AI Workshop", BrainCircuit, courseGenai, "GenAI fundamentals, tools, real use cases and hands-on practice."],
+    ["Prompt Engineering Workshop", Bot, courseData, "Prompt structure, role prompts, templates and output improvement."],
+    ["AI Digital Marketing Workshop", Megaphone, courseMarketing, "AI campaigns, social media planning, content workflow and lead systems."],
+    ["AI Automation Workshop", Workflow, courseDevops, "No-code workflows, task automation and business productivity."],
+    ["AI for Business Workshop", Building2, internshipCloud, "AI adoption, team productivity, customer support and reporting use cases."],
+    ["AI Content Creation Workshop", Palette, internshipGenai, "Captions, reels, blogs, presentations and brand content workflows."]
   ];
 
   const highlights = [
@@ -26,7 +26,6 @@ export default function Workshop() {
     ["Real AI tools", Sparkles],
     ["Project practice", Target],
     ["Certificate guidance", GraduationCap],
-    ["Image and poster creation", Image],
     ["Automation basics", Workflow]
   ];
   const reviews = [
@@ -60,14 +59,19 @@ export default function Workshop() {
             center
           />
           <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
-            {workshops.map(([title, Icon, text]) => (
-              <div key={title} className="premium-card">
-                <Icon className="text-brandGreen" size={32} />
-                <h3 className="mt-4 text-xl font-black text-primary">{title}</h3>
-                <p className="mt-3 text-sm leading-6 text-slate-600">{text}</p>
-                <Link to="/contact" className="mt-5 inline-flex text-sm font-black text-brandGreen">
-                  Enquire Now
-                </Link>
+            {workshops.map(([title, Icon, image, text]) => (
+              <div key={title} className="premium-card group overflow-hidden p-0">
+                <div className="aspect-[16/10] overflow-hidden bg-blue-50">
+                  <img src={image} alt={`${title} visual`} loading="lazy" decoding="async" className="h-full w-full object-cover transition duration-500 group-hover:scale-105" />
+                </div>
+                <div className="p-6">
+                  <Icon className="text-brandGreen" size={32} />
+                  <h3 className="mt-4 text-xl font-black text-primary">{title}</h3>
+                  <p className="mt-3 text-sm leading-6 text-slate-600">{text}</p>
+                  <Link to="/contact" className="mt-5 inline-flex text-sm font-black text-brandGreen">
+                    Enquire Now
+                  </Link>
+                </div>
               </div>
             ))}
           </div>
