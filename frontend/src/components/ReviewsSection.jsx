@@ -1,44 +1,17 @@
 import { MessageSquareText, Star } from "lucide-react";
-import reviewStory01 from "../assets/reviews/review-story-01.jpg";
-import reviewStory02 from "../assets/reviews/review-story-02.jpg";
-import reviewStory03 from "../assets/reviews/review-story-03.jpg";
-import reviewStory04 from "../assets/reviews/review-story-04.jpg";
-import reviewStory05 from "../assets/reviews/review-story-05.jpg";
-import reviewStory06 from "../assets/reviews/review-story-06.jpg";
-import reviewStory07 from "../assets/reviews/review-story-07.jpg";
-import reviewStory08 from "../assets/reviews/review-story-08.jpg";
-import reviewStory09 from "../assets/reviews/review-story-09.jpg";
-import reviewStory10 from "../assets/reviews/review-story-10.jpg";
-import reviewStory11 from "../assets/reviews/review-story-11.jpg";
-import reviewStory12 from "../assets/reviews/review-story-12.jpg";
-import reviewStory13 from "../assets/reviews/review-story-13.jpg";
 
 const reviews = [
-  ["Very practical session", "Thank you Snehal mam. The workshop was very practical and helped me understand how to use AI tools in daily work.", "Shilpa Suradkar"],
-  ["Easy to understand", "Thank you Snehal mam for explaining everything step by step. The session was beginner friendly and clear.", "Sampada Gokhale"],
-  ["Useful for marketing", "The AI content and lead generation examples were useful and easy to apply.", "Chhaya Madam's Coaching Classes"],
-  ["Good learning experience", "The hands-on examples made the workshop simple, practical and confidence building.", "Shubhangi Govin"],
+  ["New learning and confidence", "The digital marketing and AI class helped me learn something new. I received proper guidance, new opportunities and confidence to move ahead.", "Shilpa Suradkar"],
+  ["Useful for small businesses", "The AI workshop was very useful for small business owners. The guidance for business growth, marketing, AI and Gemini was very helpful.", "Chhaya Madam's Coaching Classes"],
+  ["Clear and affordable learning", "The session gave clear digital marketing knowledge at an affordable cost. Everything was explained in a simple and easy-to-understand way.", "Sampada Gokhale"],
+  ["Hands-on practice", "Thank you Snehal mam. Practicing during the workshop was the biggest achievement for me, and it helped me create work confidently.", "Shubhangi Govin"],
+  ["Business growth workshop", "Thank you Snehal mam and team for conducting a resourceful and valuable workshop that helped enhance digital marketing skills for business growth.", "Sonal Malatpure"],
+  ["Inspiring session", "The digital marketing session was very informative and inspiring. The teaching method was simple, clear and easy to understand.", "Usha Lendave"],
+  ["Practical implementation", "Thank you for the learning. I practiced what was taught in the session and understood how to apply it for real work.", "Nilima Shinde"],
+  ["Business promotion support", "The session helped me understand how to create advertising for my business using digital marketing and AI guidance.", "Vijay Nimse"],
+  ["Creative independence", "The course helped me create urgent creatives without depending on others. It was practical, useful and confidence building.", "Rajashree Gagare"],
   ["Helpful for career growth", "The session helped me understand how AI tools can support projects, internship work and career growth.", "SMBS Team"],
-  ["Professional guidance", "Thank you Snehal mam. The workshop was well organized, practical and focused on real use cases.", "Rajashri"],
-  ["Clear explanation", "The concepts were explained in a simple way with useful examples for students and professionals.", "Aditi Patil"],
-  ["Confidence building", "The workshop helped me start using AI tools with more confidence for daily work and learning.", "Priya Jadhav"],
-  ["Practical examples", "Every topic was connected with real use cases, which made the session valuable and easy to follow.", "Neha Pawar"]
-];
-
-const reviewStories = [
-  reviewStory01,
-  reviewStory02,
-  reviewStory03,
-  reviewStory04,
-  reviewStory05,
-  reviewStory06,
-  reviewStory07,
-  reviewStory08,
-  reviewStory09,
-  reviewStory10,
-  reviewStory11,
-  reviewStory12,
-  reviewStory13
+  ["Professional guidance", "Thank you Snehal mam. The workshop was well organized, practical and focused on real use cases.", "Rajashri"]
 ];
 
 export default function ReviewsSection() {
@@ -69,22 +42,6 @@ export default function ReviewsSection() {
               <p className="mt-5 border-t border-slate-100 pt-4 text-sm font-black text-brandGreen">{name}</p>
             </div>
           ))}
-        </div>
-
-        <div className="mt-10 overflow-hidden rounded-3xl bg-white p-4 shadow-premium sm:p-5">
-          <div className="flex gap-4 overflow-x-auto pb-2">
-            {reviewStories.map((image, index) => (
-              <article key={image} className="shrink-0 overflow-hidden rounded-2xl border border-blue-100 bg-white shadow-sm">
-                <img
-                  src={image}
-                  alt={`Workshop learner review ${index + 1}`}
-                  loading="lazy"
-                  decoding="async"
-                  className="h-[430px] w-[245px] object-cover sm:h-[500px] sm:w-[285px]"
-                />
-              </article>
-            ))}
-          </div>
         </div>
       </div>
     </section>
