@@ -39,7 +39,7 @@ export default function Footer() {
             <a aria-label="YouTube" className="grid h-10 w-10 place-items-center rounded-full bg-white/10 transition hover:-translate-y-1 hover:bg-accent hover:text-primary" href="https://youtube.com" target="_blank" rel="noreferrer">
               <Youtube size={18} />
             </a>
-            <a aria-label="Email" className="grid h-10 w-10 place-items-center rounded-full bg-white/10 transition hover:-translate-y-1 hover:bg-accent hover:text-primary" href="mailto:info@whatsupcloud.com">
+            <a aria-label="Email" className="grid h-10 w-10 place-items-center rounded-full bg-white/10 transition hover:-translate-y-1 hover:bg-accent hover:text-primary" href="mailto:whatsupcloud26@gmail.com">
               <Mail size={18} />
             </a>
           </div>

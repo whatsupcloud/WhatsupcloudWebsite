@@ -8,9 +8,12 @@ export default function Contact() {
         <div>
           <SectionTitle eyebrow="Contact" title="Submit Enquiry" text="Share your details and our team will contact you soon with the right course or program guidance." />
           <div className="rounded-3xl bg-primary p-6 text-white shadow-premium">
-            <p className="text-sm font-bold text-accent">WhatsUpCloud</p>
+            <p className="text-sm font-bold text-green-100">WhatsUpCloud</p>
             <p className="mt-3 text-2xl font-black">AI Training Institute</p>
-            <p className="mt-3 text-sm leading-6 text-blue-50">Powered by Inovalytics Technology</p>
+            <a href="mailto:whatsupcloud26@gmail.com" className="mt-5 inline-flex rounded-2xl bg-white/10 px-4 py-3 text-sm font-black text-white transition hover:bg-white/20">
+              whatsupcloud26@gmail.com
+            </a>
+            <p className="mt-4 text-sm leading-6 text-blue-50">Powered by Inovalytics Technology</p>
           </div>
         </div>
         <EnquiryForm />
