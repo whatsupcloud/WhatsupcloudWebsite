@@ -8,13 +8,16 @@ export default function Footer() {
       <div className="container-max grid gap-10 px-5 py-12 sm:px-8 md:grid-cols-[1.3fr_1fr_1fr] lg:px-12">
         <div>
           <div className="flex items-center gap-3">
-            <img src={logo} alt="WhatsUpCloud logo" className="h-12 w-12 rounded-full bg-white object-contain" />
+            <img src={logo} alt="WhatsUpCloud logo" loading="lazy" decoding="async" className="h-12 w-12 rounded-full bg-white object-contain" />
             <div>
               <p className="text-xl font-black">WhatsUpCloud</p>
             </div>
           </div>
           <p className="mt-5 max-w-md text-sm leading-6 text-blue-50">
             Practical AI training, automation, digital skills, internships and workshops for students, professionals and businesses.
+          </p>
+          <p className="mt-4 inline-flex rounded-full bg-white/10 px-4 py-2 text-sm font-bold text-accent">
+            Made for Students, Professionals & Business Owners
           </p>
         </div>
         <div>
@@ -30,13 +33,13 @@ export default function Footer() {
         <div>
           <p className="font-bold text-accent">Connect</p>
           <div className="mt-4 flex gap-3">
-            <a aria-label="Instagram" className="grid h-10 w-10 place-items-center rounded-full bg-white/10 transition hover:bg-white/20" href="https://instagram.com" target="_blank" rel="noreferrer">
+            <a aria-label="Instagram" className="grid h-10 w-10 place-items-center rounded-full bg-white/10 transition hover:-translate-y-1 hover:bg-accent hover:text-primary" href="https://instagram.com" target="_blank" rel="noreferrer">
               <Instagram size={18} />
             </a>
-            <a aria-label="YouTube" className="grid h-10 w-10 place-items-center rounded-full bg-white/10 transition hover:bg-white/20" href="https://youtube.com" target="_blank" rel="noreferrer">
+            <a aria-label="YouTube" className="grid h-10 w-10 place-items-center rounded-full bg-white/10 transition hover:-translate-y-1 hover:bg-accent hover:text-primary" href="https://youtube.com" target="_blank" rel="noreferrer">
               <Youtube size={18} />
             </a>
-            <a aria-label="Email" className="grid h-10 w-10 place-items-center rounded-full bg-white/10 transition hover:bg-white/20" href="mailto:info@whatsupcloud.com">
+            <a aria-label="Email" className="grid h-10 w-10 place-items-center rounded-full bg-white/10 transition hover:-translate-y-1 hover:bg-accent hover:text-primary" href="mailto:info@whatsupcloud.com">
               <Mail size={18} />
             </a>
           </div>

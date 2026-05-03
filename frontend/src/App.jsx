@@ -3,6 +3,7 @@ import Header from "./components/Header.jsx";
 import Footer from "./components/Footer.jsx";
 import Chatbot from "./components/Chatbot.jsx";
 import LeadPopup from "./components/LeadPopup.jsx";
+import StickyCTA from "./components/StickyCTA.jsx";
 import Home from "./pages/Home.jsx";
 import About from "./pages/About.jsx";
 import Courses from "./pages/Courses.jsx";
@@ -29,6 +30,7 @@ export default function App() {
       <Footer />
       <Chatbot />
       <LeadPopup />
+      <StickyCTA />
     </div>
   );
 }

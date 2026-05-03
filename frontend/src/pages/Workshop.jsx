@@ -2,12 +2,12 @@ import { Bot, BrainCircuit, Building2, Cpu, GraduationCap, Image, Megaphone, Pal
 import { Link } from "react-router-dom";
 import LogoRibbon from "../components/LogoRibbon.jsx";
 import SectionTitle from "../components/SectionTitle.jsx";
-import review01 from "../assets/reviews/review-story-01.png";
-import review02 from "../assets/reviews/review-story-02.png";
-import review03 from "../assets/reviews/review-story-03.png";
-import review04 from "../assets/reviews/review-story-04.png";
-import review05 from "../assets/reviews/review-story-05.png";
-import review06 from "../assets/reviews/review-story-06.png";
+import review01 from "../assets/reviews/review-story-01.jpg";
+import review02 from "../assets/reviews/review-story-02.jpg";
+import review03 from "../assets/reviews/review-story-03.jpg";
+import review04 from "../assets/reviews/review-story-04.jpg";
+import review05 from "../assets/reviews/review-story-05.jpg";
+import review06 from "../assets/reviews/review-story-06.jpg";
 
 export default function Workshop() {
   const workshops = [
@@ -102,7 +102,7 @@ export default function Workshop() {
           <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
             {reviews.map((review, index) => (
               <div key={review} className="overflow-hidden rounded-3xl bg-white p-3 shadow-premium">
-                <img src={review} alt={`Student workshop review ${index + 1}`} className="h-full w-full rounded-2xl object-cover" />
+                <img src={review} alt={`Student workshop review ${index + 1}`} loading="lazy" decoding="async" className="h-full w-full rounded-2xl object-cover" />
               </div>
             ))}
           </div>

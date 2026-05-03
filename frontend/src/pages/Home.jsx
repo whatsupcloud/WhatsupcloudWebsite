@@ -1,4 +1,4 @@
-import { Award, BriefcaseBusiness, CheckCircle2, Clock, GraduationCap, Lightbulb, Rocket, Sparkles, Star, Users, Workflow } from "lucide-react";
+import { Award, BriefcaseBusiness, CheckCircle2, Clock, HelpCircle, Lightbulb, Star, Users, Workflow } from "lucide-react";
 import { Link } from "react-router-dom";
 import CourseCard from "../components/CourseCard.jsx";
 import EnquiryForm from "../components/EnquiryForm.jsx";
@@ -10,6 +10,21 @@ import { additionalCourses, aiCourses } from "../data.js";
 import placementLinkedin from "../assets/showcase/placement-linkedin.jpg";
 import placementMock from "../assets/showcase/placement-mock.jpg";
 import placementResume from "../assets/showcase/placement-resume.jpg";
+
+function scrollToForm() {
+  const form = document.getElementById("enquiry-form");
+  if (form) form.scrollIntoView({ behavior: "smooth", block: "start" });
+}
+
+function SectionCTA({ label = "Enquire Now" }) {
+  return (
+    <div className="mt-10 text-center lg:col-span-full">
+      <button type="button" onClick={scrollToForm} className="btn-primary">
+        {label}
+      </button>
+    </div>
+  );
+}
 
 export default function Home() {
   const heroPoints = ["Live Training", "Certificate", "Projects", "Career Support", "Limited Seats Available"];
@@ -23,6 +38,14 @@ export default function Home() {
   const learnItems = ["AI image creation", "AI posters", "Instagram growth", "WhatsApp Business", "Lead generation", "Automation"];
   const joinItems = ["Students", "Job seekers", "Business owners", "Freelancers"];
   const flow = ["Register", "Attend Live Workshop", "Start using AI"];
+  const faqs = [
+    ["Can beginners join?", "Yes. The training is beginner friendly and no prior experience is required."],
+    ["Will I get a certificate?", "Yes. Certificate guidance and completion support are included."],
+    ["How can I know the fees?", "Please submit the enquiry form and our team will contact you with complete details."],
+    ["Will recording be available?", "Recording availability depends on the batch or workshop format. Our team will confirm it after enquiry."],
+    ["What is the course/workshop duration?", "Duration depends on the selected course, workshop or internship track. Submit the form for exact details."],
+    ["Who can join this training?", "Students, job seekers, professionals, business owners and freelancers can join."]
+  ];
   const focusedCourses = aiCourses.filter(([title]) => ["Generative AI", "AI Digital Marketing", "AI Automation", "AI Prompt Engineering"].includes(title));
   const focusedAdditional = additionalCourses.filter((course) => ["DevOps", "AWS Cloud", "Full Stack Development"].includes(course));
 
@@ -41,13 +64,16 @@ export default function Home() {
             <p className="mt-4 inline-flex rounded-full bg-green-50 px-4 py-2 text-sm font-black text-brandGreen">
               No prior experience required
             </p>
+            <p className="ml-0 mt-3 inline-flex rounded-full bg-accent px-4 py-2 text-sm font-black text-primary shadow-sm sm:ml-3">
+              Limited Seats Available
+            </p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <Link to="/courses" className="btn-primary">Explore Courses</Link>
-              <Link to="/contact" className="btn-secondary">Register Now</Link>
+              <button type="button" onClick={scrollToForm} className="btn-primary">Register Now</button>
             </div>
             <div className="mt-8 grid grid-cols-2 gap-3 sm:grid-cols-5">
               {heroPoints.map((badge) => (
-                <div key={badge} className="rounded-2xl border border-white bg-white/85 px-3 py-3 text-center text-xs font-black text-primary shadow-sm">
+                <div key={badge} className={`rounded-2xl border border-white px-3 py-3 text-center text-xs font-black text-primary shadow-sm ${badge === "Limited Seats Available" ? "bg-accent" : "bg-white/85"}`}>
                   {badge}
                 </div>
               ))}
@@ -82,6 +108,7 @@ export default function Home() {
               </div>
             ))}
           </div>
+          <SectionCTA />
         </div>
       </section>
 
@@ -110,6 +137,7 @@ export default function Home() {
               ))}
             </div>
           </div>
+          <SectionCTA />
         </div>
       </section>
 
@@ -125,6 +153,7 @@ export default function Home() {
               </div>
             ))}
           </div>
+          <SectionCTA />
         </div>
       </section>
 
@@ -146,6 +175,7 @@ export default function Home() {
               </div>
             ))}
           </div>
+          <SectionCTA label="Register Now" />
         </div>
       </section>
 
@@ -162,6 +192,7 @@ export default function Home() {
               </div>
             ))}
           </div>
+          <SectionCTA />
         </div>
       </section>
 
@@ -194,6 +225,7 @@ export default function Home() {
               <ProgramCard key={title} title={title} subtitle={subtitle} description={description} image={image} tags={tags} />
             ))}
           </div>
+          <SectionCTA />
         </div>
       </section>
 
@@ -209,7 +241,7 @@ export default function Home() {
             ))}
           </div>
           <div className="mt-8 text-center">
-            <Link to="/contact" className="btn-primary">Register Now</Link>
+            <button type="button" onClick={scrollToForm} className="btn-primary">Register Now</button>
           </div>
         </div>
       </section>
@@ -226,6 +258,27 @@ export default function Home() {
               </div>
             ))}
           </div>
+          <SectionCTA />
+        </div>
+      </section>
+
+      <section className="section bg-blue-50/70">
+        <div className="container-max">
+          <SectionTitle eyebrow="FAQ" title="Common questions before you register" center />
+          <div className="grid gap-5 md:grid-cols-2">
+            {faqs.map(([question, answer]) => (
+              <article key={question} className="premium-card">
+                <div className="flex items-start gap-3">
+                  <HelpCircle className="mt-1 shrink-0 text-brandGreen" size={22} />
+                  <div>
+                    <h3 className="text-lg font-black text-primary">{question}</h3>
+                    <p className="mt-2 text-sm leading-6 text-slate-600">{answer}</p>
+                  </div>
+                </div>
+              </article>
+            ))}
+          </div>
+          <SectionCTA label="Enquire Now" />
         </div>
       </section>
 

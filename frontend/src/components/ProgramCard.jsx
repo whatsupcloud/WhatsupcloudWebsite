@@ -6,7 +6,7 @@ export default function ProgramCard({ title, subtitle, description, image, tags 
     <article className="overflow-hidden rounded-2xl border border-slate-100 bg-white shadow-premium transition duration-300 hover:-translate-y-1">
       {image && (
         <div className="aspect-[16/10] overflow-hidden bg-blue-50">
-          <img src={image} alt={`${title} training visual`} className="h-full w-full object-cover" />
+          <img src={image} alt={`${title} training visual`} loading="lazy" decoding="async" className="h-full w-full object-cover" />
         </div>
       )}
       <div className="p-6">

@@ -1,6 +1,5 @@
 import { X } from "lucide-react";
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
 
 export default function LeadPopup() {
   const [open, setOpen] = useState(false);
@@ -26,10 +25,19 @@ export default function LeadPopup() {
       </button>
       <p className="eyebrow">Limited Seats Available</p>
       <h3 className="mt-3 pr-8 text-2xl font-black text-primary">Want to Learn AI?</h3>
-      <p className="mt-2 text-sm leading-6 text-slate-600">Register your enquiry and our team will guide you with the right AI training path.</p>
-      <Link to="/contact" onClick={() => setDismissed(true)} className="btn-primary mt-5 w-full">
+      <p className="mt-2 text-sm leading-6 text-slate-600">Fill the form and our team will contact you.</p>
+      <button type="button" onClick={scrollToForm} className="btn-primary mt-5 w-full">
         Register Now
-      </Link>
+      </button>
     </div>
   );
 }
+  const scrollToForm = () => {
+    const form = document.getElementById("enquiry-form");
+    setDismissed(true);
+    if (form) {
+      form.scrollIntoView({ behavior: "smooth", block: "start" });
+      return;
+    }
+    window.location.href = "/contact#enquiry-form";
+  };
