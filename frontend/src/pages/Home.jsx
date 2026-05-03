@@ -105,7 +105,7 @@ export default function Home() {
 
       <section className="section bg-blue-50/70">
         <div className="container-max">
-          <SectionTitle eyebrow="Explore" title="Choose the right path" text="Home page is kept simple. Detailed information is available on separate pages." center />
+          <SectionTitle eyebrow="Explore" title="Choose the right path" center />
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {programs.map(([title, text, path, Icon, action]) => (
               <Link key={title} to={path} className="rounded-3xl border border-slate-100 bg-white p-5 shadow-sm transition hover:-translate-y-1 hover:shadow-premium sm:p-6">
