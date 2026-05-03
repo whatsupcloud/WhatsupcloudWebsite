@@ -5,11 +5,13 @@ import SectionTitle from "../components/SectionTitle.jsx";
 import internshipCloud from "../assets/showcase/internship-cloud.jpg";
 import internshipDevops from "../assets/showcase/internship-devops.jpg";
 import internshipGenai from "../assets/showcase/internship-genai.jpg";
+import courseMarketing from "../assets/showcase/course-marketing.jpg";
 
 export default function Internship() {
   const items = ["AI Internship", "Project-based learning", "30 / 45 / 60 days", "Certificate", "Resume + LinkedIn support", "Mock interviews"];
   const tracks = [
     ["Generative AI Internship", "AI Track", "Prompt systems, AI workflows, use-case research and guided project execution.", internshipGenai, ["Use cases", "AI workflows"]],
+    ["AI Digital Marketing Internship", "Marketing Track", "AI posters, campaign planning, Instagram content, lead generation and automation practice.", courseMarketing, ["AI content", "Leads"]],
     ["Cloud Internship", "Cloud Track", "Cloud service basics, deployment exposure and practical platform understanding.", internshipCloud, ["Cloud labs", "Deployment"]],
     ["DevOps Internship", "DevOps Track", "Container workflows, CI/CD thinking, automation basics and deployment practice.", internshipDevops, ["CI/CD", "Automation"]]
   ];
@@ -35,7 +37,7 @@ export default function Internship() {
       <section className="section">
         <div className="container-max">
           <SectionTitle eyebrow="Internship Tracks" title="Choose a practical internship pathway" text="Each track combines mentor-led tasks, project practice, documentation and completion support." center />
-          <div className="grid gap-6 md:grid-cols-3">
+          <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-4">
             {tracks.map(([title, subtitle, description, image, tags]) => (
               <ProgramCard key={title} title={title} subtitle={subtitle} description={description} image={image} tags={tags} />
             ))}
