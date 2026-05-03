@@ -2,6 +2,15 @@
 import { Link } from "react-router-dom";
 import LogoRibbon from "../components/LogoRibbon.jsx";
 import SectionTitle from "../components/SectionTitle.jsx";
+import courseData from "../assets/showcase/course-data.jpg";
+import courseDevops from "../assets/showcase/course-devops.jpg";
+import courseGenai from "../assets/showcase/course-genai.jpg";
+import courseMarketing from "../assets/showcase/course-marketing.jpg";
+import internshipCloud from "../assets/showcase/internship-cloud.jpg";
+import internshipDevops from "../assets/showcase/internship-devops.jpg";
+import internshipGenai from "../assets/showcase/internship-genai.jpg";
+import placementMock from "../assets/showcase/placement-mock.jpg";
+import placementResume from "../assets/showcase/placement-resume.jpg";
 
 export default function Workshop() {
   const workshops = [
@@ -27,7 +36,18 @@ export default function Workshop() {
     ["Useful for marketing", "The AI poster, content and lead generation examples were useful and easy to apply.", "Chhaya Madam's Coaching Classes"],
     ["Good learning experience", "The hands-on examples made the workshop simple, practical and confidence building.", "Shubhangi Govin"],
     ["Helpful for career growth", "The session helped me understand how AI tools can support projects, internship work and career growth.", "SMBS Team"],
-    ["Professional guidance", "Thank you Snehal mam. The workshop was well organized, practical and focused on real use cases.", "Rajashree Tai"]
+    ["Professional guidance", "Thank you Snehal mam. The workshop was well organized, practical and focused on real use cases.", "Rajashri"]
+  ];
+  const gallery = [
+    ["Live AI Training", courseGenai],
+    ["Digital Marketing Practice", courseMarketing],
+    ["Prompt Engineering Lab", courseData],
+    ["Automation Demo", courseDevops],
+    ["Internship Project Work", internshipGenai],
+    ["Cloud Workshop", internshipCloud],
+    ["DevOps Session", internshipDevops],
+    ["Resume Guidance", placementResume],
+    ["Mock Interview Practice", placementMock]
   ];
 
   return (
@@ -86,12 +106,17 @@ export default function Workshop() {
 
       <section className="section bg-green-50/70">
         <div className="container-max">
-          <SectionTitle eyebrow="Workshop Gallery" title="Seminars, hands-on practice and automation demos" center />
-          <div className="grid gap-5 md:grid-cols-3">
-            {["Live seminar setup", "Hands-on AI practice", "Automation demo"].map((item, index) => (
-              <div key={item} className="min-h-56 rounded-3xl bg-primary p-6 text-white shadow-premium tech-grid">
-                <p className="text-sm font-bold text-accent">Gallery {index + 1}</p>
-                <h3 className="mt-16 text-2xl font-black">{item}</h3>
+          <SectionTitle eyebrow="Workshop Gallery" title="Professional training visuals and hands-on learning moments" center />
+          <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+            {gallery.map(([title, image]) => (
+              <div key={title} className="group overflow-hidden rounded-3xl bg-white shadow-premium">
+                <div className="aspect-[4/3] overflow-hidden bg-blue-50">
+                  <img src={image} alt={`${title} visual`} loading="lazy" decoding="async" className="h-full w-full object-cover transition duration-500 group-hover:scale-105" />
+                </div>
+                <div className="p-5">
+                  <h3 className="text-lg font-black text-primary">{title}</h3>
+                  <p className="mt-2 text-sm leading-6 text-slate-600">Practical, mentor-led learning with real project and career outcomes.</p>
+                </div>
               </div>
             ))}
           </div>

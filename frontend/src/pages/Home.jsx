@@ -1,16 +1,10 @@
-import { Award, BriefcaseBusiness, CheckCircle2, Clock, HelpCircle, Lightbulb, Star, Users, Workflow } from "lucide-react";
+import { Award, BriefcaseBusiness, CheckCircle2, Clock, HelpCircle, Lightbulb, Linkedin, MonitorCheck, Presentation, SearchCheck, Star, Users, Workflow } from "lucide-react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import CourseCard from "../components/CourseCard.jsx";
 import EnquiryForm from "../components/EnquiryForm.jsx";
 import LogoRibbon from "../components/LogoRibbon.jsx";
-import ProgramCard from "../components/ProgramCard.jsx";
 import SectionTitle from "../components/SectionTitle.jsx";
 import trainerPhoto from "../assets/trainer-photo.jpg";
-import { additionalCourses, aiCourses } from "../data.js";
-import placementLinkedin from "../assets/showcase/placement-linkedin.jpg";
-import placementMock from "../assets/showcase/placement-mock.jpg";
-import placementResume from "../assets/showcase/placement-resume.jpg";
 
 function scrollToForm() {
   const form = document.getElementById("enquiry-form");
@@ -42,15 +36,15 @@ export default function Home() {
     ["Certificate", Award],
     ["Career Support", BriefcaseBusiness]
   ];
-  const learnItems = [
-    "Create AI images for posts, ads and branding",
-    "Design posters, banners and social media creatives",
-    "Plan Instagram content with captions and hashtags",
-    "Set up WhatsApp Business replies and enquiry flow",
-    "Build simple lead generation forms and follow-up process",
-    "Automate repetitive marketing and business tasks"
-  ];
   const joinItems = ["Students", "Job seekers", "Business owners", "Freelancers"];
+  const careerSupport = [
+    ["AI Resume Building", "ATS-friendly resume, project wording and role-based profile positioning.", Presentation],
+    ["LinkedIn Optimization", "Headline, about section, skills, featured projects and recruiter-ready profile cleanup.", Linkedin],
+    ["Portfolio Projects", "GitHub, project documentation and demo-ready work samples for interviews.", MonitorCheck],
+    ["Mock Interviews", "HR, technical, communication and confidence practice for freshers and professionals.", Users],
+    ["Job Search Strategy", "Role targeting, application tracking, interview preparation and follow-up guidance.", SearchCheck],
+    ["Freelance Readiness", "Service packaging, client communication and practical AI work presentation.", BriefcaseBusiness]
+  ];
   const flow = ["Register", "Attend Live Workshop", "Start using AI"];
   const faqs = [
     ["Can beginners join?", "Yes. The training is beginner friendly and no prior experience is required."],
@@ -60,9 +54,6 @@ export default function Home() {
     ["What is the course/workshop duration?", "Duration depends on the selected course, workshop or internship track. Submit the form for exact details."],
     ["Who can join this training?", "Students, job seekers, professionals, business owners and freelancers can join."]
   ];
-  const focusedCourses = aiCourses.filter(([title]) => ["Generative AI", "AI Digital Marketing", "AI Automation", "AI Prompt Engineering"].includes(title));
-  const focusedAdditional = additionalCourses.filter((course) => ["DevOps", "AWS Cloud", "MLOps", "DevOps using AI", "Full Stack Development"].includes(course));
-
   return (
     <>
       <section className="section orb-free-gradient">
@@ -134,29 +125,16 @@ export default function Home() {
       </section>
 
       <section className="section bg-green-50/70">
-        <div className="container-max grid gap-10 lg:grid-cols-2">
-          <div>
-            <SectionTitle eyebrow="What You Will Practice" title="Practical AI tasks you can use immediately" text="Every topic is connected to a real output, so learners understand what to create, where to use it and how it helps career or business growth." />
-            <div className="grid gap-4 sm:grid-cols-2">
-              {learnItems.map((item) => (
-                <div key={item} className="flex items-center gap-3 rounded-2xl bg-white p-4 font-bold text-slate-700 shadow-sm">
-                  <CheckCircle2 className="shrink-0 text-brandGreen" size={20} />
-                  {item}
-                </div>
-              ))}
-            </div>
-          </div>
-          <div>
-            <SectionTitle eyebrow="Who Can Join" title="Open for learners, creators and business teams" />
-            <div className="grid gap-4 sm:grid-cols-2">
-              {joinItems.map((item) => (
-                <div key={item} className="premium-card">
-                  <Users className="text-brandGreen" size={28} />
-                  <h3 className="mt-4 text-xl font-black text-primary">{item}</h3>
-                  <p className="mt-2 text-sm leading-6 text-slate-600">Learn practical AI workflows without needing advanced technical background.</p>
-                </div>
-              ))}
-            </div>
+        <div className="container-max">
+          <SectionTitle eyebrow="Who Can Join" title="Open for learners, creators and business teams" text="Training is designed for practical learning, clear guidance and confident next steps." center />
+          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            {joinItems.map((item) => (
+              <Link key={item} to="/contact" className="premium-card block">
+                <Users className="text-brandGreen" size={28} />
+                <h3 className="mt-4 text-xl font-black text-primary">{item}</h3>
+                <p className="mt-2 text-sm leading-6 text-slate-600">Get the right course or workshop guidance through the enquiry form.</p>
+              </Link>
+            ))}
           </div>
           <SectionCTA />
         </div>
@@ -202,18 +180,13 @@ export default function Home() {
 
       <section className="section">
         <div className="container-max">
-          <SectionTitle eyebrow="Courses" title="Focused AI and technology programs" text="No public course prices are shown. Submit an enquiry and the team will guide you." center />
-          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
-            {focusedCourses.map(([title, description]) => <CourseCard key={title} title={title} description={description} />)}
+          <SectionTitle eyebrow="Courses" title="Explore all AI and technology programs in one place" text="The complete course list is kept on the Courses page so learners can compare options clearly without repetition." center />
+          <div className="mx-auto flex max-w-2xl flex-col gap-3 rounded-3xl border border-slate-100 bg-white p-6 text-center shadow-premium sm:flex-row sm:items-center sm:justify-center">
+            <Link to="/courses" className="btn-primary">View All Courses</Link>
+            <button type="button" onClick={scrollToForm} className="rounded-full border border-brandGreen px-6 py-3 text-sm font-black text-brandGreen transition hover:bg-brandGreen hover:text-white">
+              Enquire Now
+            </button>
           </div>
-          <div className="mt-6 grid gap-4 sm:grid-cols-3">
-            {focusedAdditional.map((course) => (
-              <div key={course} className="rounded-2xl bg-blue-50 px-5 py-5 text-center text-sm font-black text-primary">
-                {course}
-              </div>
-            ))}
-          </div>
-          <SectionCTA />
         </div>
       </section>
 
@@ -236,14 +209,14 @@ export default function Home() {
 
       <section className="section">
         <div className="container-max">
-          <SectionTitle eyebrow="Career Support" title="Placement readiness support for stronger student presentation" center />
-          <div className="grid gap-6 md:grid-cols-3">
-            {[
-              ["Resume Building", "Profile", "ATS-friendly resume structure, project framing and role-focused presentation.", placementResume, ["Resume", "Projects"]],
-              ["LinkedIn Optimization", "Branding", "Better profile clarity, professional positioning and visibility support.", placementLinkedin, ["LinkedIn", "Profile"]],
-              ["Mock Interviews", "Practice", "Technical, HR and communication practice to improve confidence.", placementMock, ["Interview", "Confidence"]]
-            ].map(([title, subtitle, description, image, tags]) => (
-              <ProgramCard key={title} title={title} subtitle={subtitle} description={description} image={image} tags={tags} />
+          <SectionTitle eyebrow="Career Support" title="Latest career support for student and professional growth" text="Career support is focused on current hiring expectations, profile clarity, portfolio proof and interview confidence." center />
+          <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+            {careerSupport.map(([title, description, Icon]) => (
+              <Link key={title} to="/contact" className="rounded-3xl border border-slate-100 bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-premium">
+                <Icon className="text-brandGreen" size={30} />
+                <h3 className="mt-4 text-xl font-black text-primary">{title}</h3>
+                <p className="mt-3 text-sm leading-6 text-slate-600">{description}</p>
+              </Link>
             ))}
           </div>
           <SectionCTA />
@@ -255,10 +228,10 @@ export default function Home() {
           <SectionTitle eyebrow="Workshops" title="AI workshops beyond digital marketing" text="Explore practical workshops in Generative AI, Prompt Engineering, AI Automation, Business AI, Content Creation and AI Digital Marketing." center />
           <div className="grid gap-5 md:grid-cols-3">
             {["Generative AI", "Prompt Engineering", "AI Digital Marketing", "AI Automation", "AI for Business", "AI Content Creation"].map((item) => (
-              <div key={item} className="rounded-2xl bg-white p-6 text-center font-black text-primary shadow-sm">
+              <Link key={item} to="/workshop" className="rounded-2xl bg-white p-6 text-center font-black text-primary shadow-sm transition hover:-translate-y-1 hover:shadow-premium">
                 <Lightbulb className="mx-auto mb-4 text-accent" size={28} />
                 {item}
-              </div>
+              </Link>
             ))}
           </div>
           <div className="mt-8 text-center">

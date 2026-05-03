@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import LogoRibbon from "../components/LogoRibbon.jsx";
 import ProgramCard from "../components/ProgramCard.jsx";
 import SectionTitle from "../components/SectionTitle.jsx";
@@ -51,10 +52,11 @@ export default function Courses() {
           <SectionTitle eyebrow="Additional Courses" title="Technology skills that strengthen your AI journey" center />
           <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
             {technologyTracks.map(([course, syllabus]) => (
-              <div key={course} className="rounded-2xl border border-slate-100 bg-white p-5 shadow-sm transition hover:-translate-y-1 hover:shadow-premium">
+              <Link key={course} to="/contact" className="rounded-2xl border border-slate-100 bg-white p-5 shadow-sm transition hover:-translate-y-1 hover:shadow-premium">
                 <h3 className="text-lg font-black text-primary">{course}</h3>
                 <p className="mt-2 text-sm leading-6 text-slate-600">{syllabus}</p>
-              </div>
+                <p className="mt-4 text-sm font-black text-brandGreen">Enquire Now</p>
+              </Link>
             ))}
           </div>
         </div>
