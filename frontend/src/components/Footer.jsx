@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-import logo from "../assets/whatsupcloud-logo.png";
 
 const instagramUrl = "https://www.instagram.com/whats_upcloud/";
 const emailAddress = "whatsupcloud26@gmail.com";
@@ -13,20 +12,6 @@ export default function Footer() {
   return (
     <footer className="border-t border-slate-100 bg-primary text-white">
       <div className="container-max grid gap-8 px-5 py-8 sm:px-8 md:grid-cols-[1.3fr_1fr_1fr] lg:px-12">
-        <div>
-          <div className="flex items-center gap-3">
-            <img src={logo} alt="WhatsUpCloud logo" loading="lazy" decoding="async" className="h-10 w-10 rounded-full bg-white object-contain" />
-            <div>
-              <p className="text-xl font-black">WhatsUpCloud</p>
-            </div>
-          </div>
-          <p className="mt-4 max-w-md text-sm leading-6 text-blue-50">
-            Practical AI training, automation, digital skills, internships and workshops for students, professionals and businesses.
-          </p>
-          <p className="mt-3 inline-flex rounded-full bg-white/10 px-4 py-2 text-sm font-bold text-accent">
-            Made for Students, Professionals & Business Owners
-          </p>
-        </div>
         <div>
           <p className="font-bold text-accent">Quick links</p>
           <div className="mt-3 grid grid-cols-2 gap-x-5 gap-y-2 text-sm text-blue-50 md:grid-cols-1">
