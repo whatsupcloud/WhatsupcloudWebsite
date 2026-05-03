@@ -1,4 +1,4 @@
-import { BriefcaseBusiness, Cloud, Code2, Container, DatabaseZap, GitBranch, GraduationCap, Handshake, Server, Settings, UsersRound, Workflow } from "lucide-react";
+import { BriefcaseBusiness, GraduationCap, Handshake, UsersRound } from "lucide-react";
 import SectionTitle from "./SectionTitle.jsx";
 
 const collaborations = [
@@ -9,18 +9,22 @@ const collaborations = [
 ];
 
 const ecosystem = [
-  ["AWS Cloud", "Cloud", Cloud],
-  ["Microsoft Azure", "Cloud", Cloud],
-  ["Google Cloud", "Cloud", Cloud],
-  ["Docker", "Containers", Container],
-  ["Kubernetes", "Orchestration", Settings],
-  ["Jenkins", "CI/CD", Workflow],
-  ["Terraform", "Infrastructure", Server],
-  ["Linux", "Servers", Server],
-  ["Python", "Automation", Code2],
-  ["GitHub", "Projects", GitBranch],
-  ["MLOps", "AI Ops", DatabaseZap],
-  ["AI Tools", "Productivity", Workflow]
+  ["ChatGPT", "AI assistant", "openai", "0B3C8C"],
+  ["Google Gemini", "AI assistant", "googlegemini", "0F5DB8"],
+  ["Claude", "AI assistant", "anthropic", "168A3A"],
+  ["Perplexity", "AI research", "perplexity", "0B3C8C"],
+  ["Canva", "Design", "canva", "168A3A"],
+  ["Adobe Firefly", "Creative AI", "adobe", "0F5DB8"],
+  ["Zapier", "Automation", "zapier", "FF4A00"],
+  ["Make", "Automation", "make", "168A3A"],
+  ["n8n", "AI workflows", "n8n", "EA4B71"],
+  ["GitHub Copilot", "Coding AI", "githubcopilot", "0B3C8C"],
+  ["AWS Cloud", "Cloud", "amazonwebservices", "FF9900"],
+  ["Microsoft Azure", "Cloud", "microsoftazure", "0F5DB8"],
+  ["Google Cloud", "Cloud", "googlecloud", "4285F4"],
+  ["Docker", "Containers", "docker", "2496ED"],
+  ["Kubernetes", "Orchestration", "kubernetes", "326CE5"],
+  ["Python", "Automation", "python", "3776AB"]
 ];
 
 export default function LogoRibbon({ compact = false }) {
@@ -52,18 +56,24 @@ export default function LogoRibbon({ compact = false }) {
           <div className="mb-5 flex flex-col gap-2 md:flex-row md:items-end md:justify-between">
             <div>
               <p className="text-xs font-black uppercase tracking-[0.18em] text-brandGreen">Tools learners practice on</p>
-              <h3 className="mt-2 text-2xl font-black text-primary">Real platforms for AI, cloud, DevOps and automation</h3>
+              <h3 className="mt-2 text-2xl font-black text-primary">Latest market tools for AI, marketing, cloud and automation</h3>
             </div>
             <p className="max-w-xl text-sm leading-6 text-slate-600">
-              Clear technology labels help students understand the actual tools covered in training and projects.
+              Logos and labels show the real tools learners use for content, research, campaigns, workflows, coding and deployment.
             </p>
           </div>
           <div className="relative overflow-hidden">
           <div className="marquee-track flex w-max gap-4">
-            {items.map(([name, type, Icon], index) => (
+            {items.map(([name, type, slug, color], index) => (
               <div key={`${name}-${index}`} className="flex min-w-56 items-center gap-4 rounded-2xl border border-slate-100 bg-white p-5 shadow-sm">
-                <span className="grid h-12 w-12 place-items-center rounded-2xl bg-green-50 text-brandGreen">
-                  <Icon size={24} />
+                <span className="grid h-12 w-12 place-items-center rounded-2xl bg-white shadow-sm ring-1 ring-slate-100">
+                  <img
+                    src={`https://cdn.simpleicons.org/${slug}/${color}`}
+                    alt={`${name} logo`}
+                    loading="lazy"
+                    decoding="async"
+                    className="h-7 w-7 object-contain"
+                  />
                 </span>
                 <div>
                   <p className="text-base font-black text-primary">{name}</p>
