@@ -3,6 +3,8 @@ import { Link } from "react-router-dom";
 import EnquiryForm from "../components/EnquiryForm.jsx";
 import LogoRibbon from "../components/LogoRibbon.jsx";
 import SectionTitle from "../components/SectionTitle.jsx";
+import courseGenai from "../assets/showcase/course-genai.jpg";
+import courseMarketing from "../assets/showcase/course-marketing.jpg";
 import trainerPhoto from "../assets/trainer-photo.jpg";
 
 function scrollToForm() {
@@ -75,6 +77,29 @@ export default function Home() {
                   <p className="mt-1 text-base font-black text-primary sm:text-lg">Practical learning with guided support</p>
                 </div>
               </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="section bg-white">
+        <div className="container-max grid items-center gap-8 lg:grid-cols-[0.9fr_1.1fr]">
+          <div className="grid grid-cols-2 gap-4">
+            <img src={courseGenai} alt="AI training visual" loading="lazy" decoding="async" className="aspect-[4/5] rounded-3xl object-cover shadow-premium" />
+            <img src={courseMarketing} alt="AI digital marketing visual" loading="lazy" decoding="async" className="mt-8 aspect-[4/5] rounded-3xl object-cover shadow-premium" />
+          </div>
+          <div>
+            <SectionTitle
+              eyebrow="What is WhatsUpCloud?"
+              title="A practical AI training institute for real skills"
+              text="WhatsUpCloud helps students, job seekers, professionals, freelancers and business owners learn AI in a practical way. Training focuses on live sessions, latest AI tools, automation, digital growth, real projects and career support."
+            />
+            <div className="grid gap-3 sm:grid-cols-2">
+              {["Learn by doing", "Tool-based training", "Project practice", "Career guidance"].map((item) => (
+                <div key={item} className="rounded-2xl bg-green-50 p-4 text-sm font-black text-brandGreen">
+                  {item}
+                </div>
+              ))}
             </div>
           </div>
         </div>
