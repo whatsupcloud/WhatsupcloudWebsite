@@ -22,7 +22,6 @@ export default function Contact() {
               <Instagram size={17} />
               Follow WhatsUpCloud on Instagram
             </a>
-            <p className="mt-4 text-sm leading-6 text-blue-50">Powered by Inovalytics Technology</p>
           </div>
         </div>
         <EnquiryForm />

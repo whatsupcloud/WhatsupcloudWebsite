@@ -19,7 +19,7 @@ export default function About() {
           <div>
             <SectionTitle
               eyebrow="About WhatsUpCloud"
-              title="An AI training institute powered by Inovalytics Technology"
+              title="An AI training institute for practical skills and career growth"
               text="WhatsUpCloud is built for learners who want practical AI skills, not only theory. We train students, job seekers, professionals, freelancers and business owners with real tools, automation workflows, projects and career-focused guidance."
             />
             <div className="grid gap-3">
