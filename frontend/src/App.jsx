@@ -4,6 +4,7 @@ import Footer from "./components/Footer.jsx";
 import Chatbot from "./components/Chatbot.jsx";
 import LeadPopup from "./components/LeadPopup.jsx";
 import StickyCTA from "./components/StickyCTA.jsx";
+import CookieConsent from "./components/CookieConsent.jsx";
 import Home from "./pages/Home.jsx";
 import About from "./pages/About.jsx";
 import Courses from "./pages/Courses.jsx";
@@ -11,6 +12,8 @@ import Internship from "./pages/Internship.jsx";
 import Workshop from "./pages/Workshop.jsx";
 import Ebook from "./pages/Ebook.jsx";
 import Contact from "./pages/Contact.jsx";
+import PrivacyPolicy from "./pages/PrivacyPolicy.jsx";
+import CookiesPolicy from "./pages/CookiesPolicy.jsx";
 
 export default function App() {
   return (
@@ -25,12 +28,15 @@ export default function App() {
           <Route path="/workshop" element={<Workshop />} />
           <Route path="/ebook" element={<Ebook />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+          <Route path="/cookies-policy" element={<CookiesPolicy />} />
         </Routes>
       </main>
       <Footer />
       <Chatbot />
       <LeadPopup />
       <StickyCTA />
+      <CookieConsent />
     </div>
   );
 }

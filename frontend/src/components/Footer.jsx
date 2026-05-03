@@ -31,6 +31,8 @@ export default function Footer() {
             <Link to="/workshop">Workshop</Link>
             <Link to="/ebook">E-Book</Link>
             <Link to="/contact">Contact</Link>
+            <Link to="/privacy-policy">Privacy Policy</Link>
+            <Link to="/cookies-policy">Cookies Policy</Link>
           </div>
         </div>
         <div>
