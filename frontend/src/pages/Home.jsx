@@ -169,8 +169,8 @@ export default function Home() {
           <SectionTitle eyebrow="Social Proof" title="Trusted workshop-style learning experience" center />
           <div className="grid gap-5 md:grid-cols-3">
             {[
-              ["100+ Students", "Learners guided through AI and digital skills."],
-              ["10+ Workshops", "Practical sessions across AI tools and growth workflows."],
+              ["500+ Students", "Learners guided through AI and digital skills."],
+              ["100+ Workshops", "Practical sessions across AI tools and growth workflows."],
               ["Star Ratings", "Positive learning feedback and real workshop reviews."]
             ].map(([title, text]) => (
               <div key={title} className="premium-card text-center">
