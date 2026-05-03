@@ -92,9 +92,9 @@ export default function Home() {
 
       <section className="section bg-green-50/70">
         <div className="container-max">
-          <SectionTitle eyebrow="Workshop" title="AI Digital Marketing Workshop" text="Hands-on workshop for AI image creation, poster design, Instagram content, WhatsApp Business, lead generation and automation basics." center />
+          <SectionTitle eyebrow="Workshops" title="AI workshops beyond digital marketing" text="Explore practical workshops in Generative AI, Prompt Engineering, AI Automation, Business AI, Content Creation and AI Digital Marketing." center />
           <div className="grid gap-5 md:grid-cols-3">
-            {["AI image creation", "AI poster design", "Instagram content", "WhatsApp Business", "Lead generation", "Automation basics"].map((item) => (
+            {["Generative AI", "Prompt Engineering", "AI Digital Marketing", "AI Automation", "AI for Business", "AI Content Creation"].map((item) => (
               <div key={item} className="rounded-2xl bg-white p-6 text-center font-black text-primary shadow-sm">
                 <Lightbulb className="mx-auto mb-4 text-accent" size={28} />
                 {item}

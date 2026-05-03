@@ -11,7 +11,6 @@ export default function Footer() {
             <img src={logo} alt="WhatsUpCloud logo" className="h-12 w-12 rounded-full bg-white object-contain" />
             <div>
               <p className="text-xl font-black">WhatsUpCloud</p>
-              <p className="text-sm text-green-100">Powered by Inovalytics Technology</p>
             </div>
           </div>
           <p className="mt-5 max-w-md text-sm leading-6 text-blue-50">
@@ -44,7 +43,8 @@ export default function Footer() {
         </div>
       </div>
       <div className="border-t border-white/10 px-5 py-5 text-center text-sm text-blue-100">
-        Copyright 2026 WhatsUpCloud. All rights reserved.
+        <p>Copyright 2026 WhatsUpCloud. All rights reserved.</p>
+        <p className="mt-2 font-semibold text-green-100">Powered by Inovalytics Technology</p>
       </div>
     </footer>
   );

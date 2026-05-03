@@ -18,12 +18,11 @@ export default function Header() {
 
   return (
     <header className="sticky top-0 z-40 border-b border-slate-100 bg-white/92 backdrop-blur">
-      <div className="container-max flex h-20 items-center justify-between px-5 sm:px-8 lg:px-12">
+      <div className="container-max flex h-24 items-center justify-between px-5 sm:px-8 lg:px-12">
         <Link to="/" className="flex items-center gap-3" onClick={() => setOpen(false)}>
-          <img src={logo} alt="WhatsUpCloud logo" className="h-12 w-12 rounded-full object-contain" />
+          <img src={logo} alt="WhatsUpCloud logo" className="h-16 w-16 rounded-full object-contain sm:h-20 sm:w-20" />
           <div>
             <p className="text-lg font-black leading-none text-primary">WhatsUpCloud</p>
-            <p className="mt-1 text-xs font-semibold text-brandGreen">Powered by Inovalytics Technology</p>
           </div>
         </Link>
 
