@@ -51,7 +51,16 @@ export async function sendLeadEmails(lead) {
       from: `"WhatsUpCloud" <${process.env.GMAIL_USER}>`,
       to: lead.email,
       subject: "Registration Submitted",
-      text: "Thank you for contacting WhatsUpCloud. Our team will contact you soon."
+      text: [
+        "Hi,",
+        "",
+        "Thank you for contacting WhatsUpCloud.",
+        "",
+        "Our team will contact you soon.",
+        "",
+        "Team WhatsUpCloud",
+        "Powered by Inovalytics Technology"
+      ].join("\n")
     })
   ]);
 }
