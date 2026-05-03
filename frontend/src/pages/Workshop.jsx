@@ -2,12 +2,6 @@ import { Bot, BrainCircuit, Building2, Cpu, GraduationCap, Image, Megaphone, Pal
 import { Link } from "react-router-dom";
 import LogoRibbon from "../components/LogoRibbon.jsx";
 import SectionTitle from "../components/SectionTitle.jsx";
-import review01 from "../assets/reviews/review-story-01.jpg";
-import review02 from "../assets/reviews/review-story-02.jpg";
-import review03 from "../assets/reviews/review-story-03.jpg";
-import review04 from "../assets/reviews/review-story-04.jpg";
-import review05 from "../assets/reviews/review-story-05.jpg";
-import review06 from "../assets/reviews/review-story-06.jpg";
 
 export default function Workshop() {
   const workshops = [
@@ -30,7 +24,14 @@ export default function Workshop() {
 
   const companyPartners = ["Inovalytics Technology", "Cloud Labs", "AI Studio", "Tech Mentors"];
   const collegePartners = ["College Partner 01", "College Partner 02", "Campus Partner", "Training Cell"];
-  const reviews = [review01, review02, review03, review04, review05, review06];
+  const reviews = [
+    ["Very practical session", "The workshop helped me understand how AI tools can be used for content, posters and daily work."],
+    ["Beginner friendly", "The trainer explained every step clearly. I could follow the session even without technical background."],
+    ["Useful for business", "The lead generation and automation examples were very useful for business and marketing work."],
+    ["Good learning experience", "I liked the hands-on approach. The session was clear, simple and easy to apply."],
+    ["Career focused", "The workshop gave me confidence to explore AI tools for projects, internship and career growth."],
+    ["Professional guidance", "The session felt organized and practical. The examples were relevant and easy to understand."]
+  ];
 
   return (
     <>
@@ -98,11 +99,15 @@ export default function Workshop() {
 
       <section className="section bg-blue-50/70">
         <div className="container-max">
-          <SectionTitle eyebrow="Student Reviews" title="Workshop feedback from learners" text="Real review snapshots from WhatsUpCloud workshop participants." center />
+          <SectionTitle eyebrow="Learner Reviews" title="Workshop feedback from learners" text="Clean English feedback cards for a professional and readable review section." center />
           <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-            {reviews.map((review, index) => (
-              <div key={review} className="overflow-hidden rounded-3xl bg-white p-3 shadow-premium">
-                <img src={review} alt={`Student workshop review ${index + 1}`} loading="lazy" decoding="async" className="h-full w-full rounded-2xl object-cover" />
+            {reviews.map(([title, text]) => (
+              <div key={title} className="premium-card">
+                <div className="flex gap-1 text-accent" aria-label="5 star rating">
+                  {[1, 2, 3, 4, 5].map((star) => <span key={star}>★</span>)}
+                </div>
+                <h3 className="mt-4 text-xl font-black text-primary">{title}</h3>
+                <p className="mt-3 text-sm leading-6 text-slate-600">{text}</p>
               </div>
             ))}
           </div>
