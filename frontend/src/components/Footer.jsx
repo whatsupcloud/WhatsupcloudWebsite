@@ -37,15 +37,24 @@ export default function Footer() {
         </div>
         <div>
           <p className="font-bold text-accent">Connect</p>
-          <div className="mt-4 flex gap-3">
-            <a aria-label="Instagram" className="grid h-10 w-10 place-items-center rounded-full bg-white/10 transition hover:-translate-y-1 hover:bg-accent hover:text-primary" href={instagramUrl} target="_blank" rel="noreferrer">
-              <Instagram size={18} />
+          <div className="mt-4 grid gap-3">
+            <a aria-label="Instagram" className="inline-flex items-center gap-3 rounded-2xl bg-white px-4 py-3 text-sm font-black text-primary shadow-sm transition hover:-translate-y-1 hover:bg-accent" href={instagramUrl} target="_blank" rel="noreferrer">
+              <span className="grid h-9 w-9 place-items-center rounded-full bg-brandGreen text-white">
+                <Instagram size={19} />
+              </span>
+              Instagram
             </a>
-            <a aria-label="YouTube" className="grid h-10 w-10 place-items-center rounded-full bg-white/10 transition hover:-translate-y-1 hover:bg-accent hover:text-primary" href="https://youtube.com" target="_blank" rel="noreferrer">
-              <Youtube size={18} />
+            <a aria-label="YouTube" className="inline-flex items-center gap-3 rounded-2xl bg-white px-4 py-3 text-sm font-black text-primary shadow-sm transition hover:-translate-y-1 hover:bg-accent" href="https://youtube.com" target="_blank" rel="noreferrer">
+              <span className="grid h-9 w-9 place-items-center rounded-full bg-red-600 text-white">
+                <Youtube size={19} />
+              </span>
+              YouTube
             </a>
-            <a aria-label="Email" className="grid h-10 w-10 place-items-center rounded-full bg-white/10 transition hover:-translate-y-1 hover:bg-accent hover:text-primary" href={`mailto:${emailAddress}`}>
-              <Mail size={18} />
+            <a aria-label="Email" className="inline-flex items-center gap-3 rounded-2xl bg-white px-4 py-3 text-sm font-black text-primary shadow-sm transition hover:-translate-y-1 hover:bg-accent" href={`mailto:${emailAddress}`}>
+              <span className="grid h-9 w-9 place-items-center rounded-full bg-secondary text-white">
+                <Mail size={19} />
+              </span>
+              Email
             </a>
           </div>
           <a href={`mailto:${emailAddress}`} className="mt-4 inline-flex text-sm font-semibold text-blue-50 transition hover:text-accent">
