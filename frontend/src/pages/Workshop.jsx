@@ -22,12 +22,12 @@ export default function Workshop() {
     ["Automation basics", Workflow]
   ];
   const reviews = [
-    ["Very practical session", "The workshop helped me understand how AI tools can be used for content, posters and daily work."],
-    ["Beginner friendly", "The trainer explained every step clearly. I could follow the session even without technical background."],
-    ["Useful for business", "The lead generation and automation examples were very useful for business and marketing work."],
-    ["Good learning experience", "I liked the hands-on approach. The session was clear, simple and easy to apply."],
-    ["Career focused", "The workshop gave me confidence to explore AI tools for projects, internship and career growth."],
-    ["Professional guidance", "The session felt organized and practical. The examples were relevant and easy to understand."]
+    ["Very practical session", "Thank you Snehal mam. The workshop was very practical and helped me understand how to use AI tools in daily work."],
+    ["Easy to understand", "Thank you Snehal mam for explaining everything step by step. The session was beginner friendly and clear."],
+    ["Useful for marketing", "The AI poster, content and lead generation examples were useful and easy to apply."],
+    ["Good learning experience", "The hands-on examples made the workshop simple, practical and confidence building."],
+    ["Helpful for career growth", "The session helped me understand how AI tools can support projects, internship work and career growth."],
+    ["Professional guidance", "Thank you Snehal mam. The workshop was well organized, practical and focused on real use cases."]
   ];
 
   return (
@@ -68,7 +68,7 @@ export default function Workshop() {
 
       <section className="section bg-blue-50/70">
         <div className="container-max">
-          <SectionTitle eyebrow="Learner Reviews" title="Workshop feedback from learners" text="Clean English feedback cards for a professional and readable review section." center />
+          <SectionTitle eyebrow="Reviews" title="Testimonials from workshop learners" text="Learners appreciated the practical, step-by-step and beginner-friendly workshop experience." center />
           <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
             {reviews.map(([title, text]) => (
               <div key={title} className="premium-card">
