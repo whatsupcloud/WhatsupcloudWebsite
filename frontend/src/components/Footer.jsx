@@ -41,6 +41,16 @@ export default function Footer() {
             </a>
           </div>
         </div>
+        <div className="md:col-span-3 grid gap-5 border-t border-white/10 pt-8 md:grid-cols-2">
+          <div>
+            <p className="font-bold text-accent">Vision</p>
+            <p className="mt-3 text-sm leading-6 text-blue-50">To make AI education practical, affordable and accessible.</p>
+          </div>
+          <div>
+            <p className="font-bold text-accent">Mission</p>
+            <p className="mt-3 text-sm leading-6 text-blue-50">To train students and professionals with real AI skills, automation and career support.</p>
+          </div>
+        </div>
       </div>
       <div className="border-t border-white/10 px-5 py-5 text-center text-sm text-blue-100">
         <p>Copyright 2026 WhatsUpCloud. All rights reserved.</p>

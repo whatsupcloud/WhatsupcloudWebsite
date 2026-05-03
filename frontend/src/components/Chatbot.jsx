@@ -6,7 +6,8 @@ function replyFor(input) {
   if (text.includes("course") || text.includes("training")) return "We offer AI training and digital skills programs.";
   if (text.includes("internship") || text.includes("project")) return "We provide internships with projects and certificates.";
   if (text.includes("fee") || text.includes("price") || text.includes("cost")) return "Please submit enquiry form, our team will contact you.";
-  if (text.includes("workshop")) return "Our AI Digital Marketing Workshop covers content, posters, WhatsApp Business, lead generation and automation basics.";
+  if (text.includes("workshop")) return "Our AI workshops include Generative AI, Prompt Engineering, AI Digital Marketing, Automation and Business AI.";
+  if (text.includes("contact")) return "Please submit the enquiry form and our team will contact you soon.";
   return "Please submit the enquiry form and our team will guide you with the best program.";
 }
 
@@ -14,7 +15,7 @@ export default function Chatbot() {
   const [open, setOpen] = useState(false);
   const [input, setInput] = useState("");
   const [messages, setMessages] = useState([{ from: "bot", text: "Hi, how can I help you?" }]);
-  const suggestions = useMemo(() => ["Courses", "Internship", "Guidance"], []);
+  const suggestions = useMemo(() => ["Courses", "Internship", "Workshop", "Contact"], []);
 
   const send = (text = input) => {
     if (!text.trim()) return;

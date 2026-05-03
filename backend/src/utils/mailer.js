@@ -32,7 +32,7 @@ function escapeHtml(value) {
 export async function sendLeadEmails(lead) {
   const mailer = transporter();
   const adminHtml = `
-    <h2>New Lead - WhatsUpCloud</h2>
+    <h2>New Lead &#8211; WhatsUpCloud</h2>
     <p><strong>Name:</strong> ${escapeHtml(lead.name)}</p>
     <p><strong>Mobile:</strong> ${escapeHtml(lead.mobile)}</p>
     <p><strong>Email:</strong> ${escapeHtml(lead.email)}</p>
@@ -44,7 +44,7 @@ export async function sendLeadEmails(lead) {
     mailer.sendMail({
       from: `"WhatsUpCloud" <${process.env.GMAIL_USER}>`,
       to: process.env.ADMIN_EMAIL,
-      subject: "New Lead – WhatsUpCloud",
+      subject: "New Lead \u2013 WhatsUpCloud",
       html: adminHtml
     }),
     mailer.sendMail({
