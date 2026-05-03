@@ -13,7 +13,7 @@ export default function Internship() {
     ["Generative AI Internship", "AI Track", "Prompt systems, AI workflows, use-case research and guided project execution.", internshipGenai, ["Use cases", "AI workflows"]],
     ["AI Digital Marketing Internship", "Marketing Track", "AI posters, campaign planning, Instagram content, lead generation and automation practice.", courseMarketing, ["AI content", "Leads"]],
     ["Cloud Internship", "Cloud Track", "Cloud service basics, deployment exposure and practical platform understanding.", internshipCloud, ["Cloud labs", "Deployment"]],
-    ["DevOps Internship", "DevOps Track", "Container workflows, CI/CD thinking, automation basics and deployment practice.", internshipDevops, ["CI/CD", "Automation"]]
+    ["DevOps Internship", "DevOps Track", "Linux, Docker, Kubernetes, Jenkins, Terraform, CI/CD thinking and deployment practice.", internshipDevops, ["CI/CD", "Automation"]]
   ];
 
   return (

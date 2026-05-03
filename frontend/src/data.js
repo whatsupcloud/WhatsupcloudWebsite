@@ -11,10 +11,8 @@ export const aiCourses = [
 export const additionalCourses = [
   "DevOps",
   "AWS Cloud",
-  "Docker & Kubernetes",
-  "Linux",
-  "Jenkins",
-  "Terraform",
+  "MLOps",
+  "DevOps using AI",
   "Python",
   "Java",
   "Full Stack Development"
@@ -25,6 +23,10 @@ export const courseOptions = [
   "AI Digital Marketing",
   "AI Prompt Engineering",
   "AI Automation",
+  "DevOps",
+  "AWS Cloud",
+  "MLOps",
+  "DevOps using AI",
   "AI Internship",
   "Workshop",
   "E-Book",

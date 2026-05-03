@@ -15,7 +15,7 @@ export default function Ebook() {
         <SectionTitle
           eyebrow="E-Book Library"
           title="Course-wise practical guides for every WhatsUpCloud program"
-          text="Explore focused e-books for AI, automation, marketing, cloud, DevOps, development and programming courses."
+          text="Explore focused e-books for AI, automation, marketing, cloud, DevOps, MLOps, DevOps using AI, development and programming courses."
           center
         />
         <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">

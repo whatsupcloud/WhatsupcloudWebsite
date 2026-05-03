@@ -47,7 +47,7 @@ export default function Home() {
     ["Who can join this training?", "Students, job seekers, professionals, business owners and freelancers can join."]
   ];
   const focusedCourses = aiCourses.filter(([title]) => ["Generative AI", "AI Digital Marketing", "AI Automation", "AI Prompt Engineering"].includes(title));
-  const focusedAdditional = additionalCourses.filter((course) => ["DevOps", "AWS Cloud", "Full Stack Development"].includes(course));
+  const focusedAdditional = additionalCourses.filter((course) => ["DevOps", "AWS Cloud", "MLOps", "DevOps using AI", "Full Stack Development"].includes(course));
 
   return (
     <>

@@ -1,7 +1,6 @@
 import LogoRibbon from "../components/LogoRibbon.jsx";
 import ProgramCard from "../components/ProgramCard.jsx";
 import SectionTitle from "../components/SectionTitle.jsx";
-import { additionalCourses } from "../data.js";
 import courseCloud from "../assets/showcase/course-cloud.jpg";
 import courseData from "../assets/showcase/course-data.jpg";
 import courseDevops from "../assets/showcase/course-devops.jpg";
@@ -17,6 +16,15 @@ export default function Courses() {
     ["AI Automation", "Automation", "Design practical automations for repeated business and career tasks.", courseDevops, ["Workflows", "No-code", "Productivity"]],
     ["AI for Business", "Business", "Apply AI to operations, sales, support, reporting and team productivity.", courseCloud, ["Business AI", "Reporting", "Support"]],
     ["AI Project Development", "Projects", "Build portfolio-ready AI projects with real-world problem statements.", courseSoftware, ["Portfolio", "Development", "Use cases"]]
+  ];
+  const technologyTracks = [
+    ["DevOps", "Linux, Git, Docker, Kubernetes, Jenkins, Terraform, CI/CD, monitoring and deployment automation."],
+    ["AWS Cloud", "AWS fundamentals, compute, storage, networking, IAM, cloud architecture and deployment basics."],
+    ["MLOps", "Model deployment lifecycle, pipelines, monitoring, versioning and production ML workflow basics."],
+    ["DevOps using AI", "Use AI tools to speed up scripting, troubleshooting, documentation, CI/CD support and cloud automation."],
+    ["Python", "Programming foundations, automation scripts, data handling and practical coding confidence."],
+    ["Java", "Core Java, OOP concepts, backend foundations and project-oriented programming practice."],
+    ["Full Stack Development", "Frontend, backend, APIs, database integration and complete project development."]
   ];
 
   return (
@@ -35,10 +43,11 @@ export default function Courses() {
       <section className="section">
         <div className="container-max">
           <SectionTitle eyebrow="Additional Courses" title="Technology skills that strengthen your AI journey" center />
-          <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-5">
-            {additionalCourses.map((course) => (
-              <div key={course} className="rounded-2xl border border-slate-100 bg-white px-4 py-5 text-center text-sm font-black text-primary shadow-sm transition hover:-translate-y-1 hover:shadow-premium">
-                {course}
+          <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+            {technologyTracks.map(([course, syllabus]) => (
+              <div key={course} className="rounded-2xl border border-slate-100 bg-white p-5 shadow-sm transition hover:-translate-y-1 hover:shadow-premium">
+                <h3 className="text-lg font-black text-primary">{course}</h3>
+                <p className="mt-2 text-sm leading-6 text-slate-600">{syllabus}</p>
               </div>
             ))}
           </div>
