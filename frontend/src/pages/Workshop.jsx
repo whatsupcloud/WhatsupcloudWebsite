@@ -48,7 +48,6 @@ export default function Workshop() {
           <SectionTitle
             eyebrow="AI Workshops"
             title="Practical AI workshops for students, professionals and businesses"
-            text="Choose from GenAI, Prompt Engineering, AI Digital Marketing, Automation, Business AI and Content Creation workshops. Each session is practical, tool-based and enquiry-led."
             center
           />
           <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
