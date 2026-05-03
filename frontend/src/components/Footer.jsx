@@ -12,24 +12,24 @@ const socialLinks = [
 export default function Footer() {
   return (
     <footer className="border-t border-slate-100 bg-primary text-white">
-      <div className="container-max grid gap-10 px-5 py-12 sm:px-8 md:grid-cols-[1.3fr_1fr_1fr] lg:px-12">
+      <div className="container-max grid gap-8 px-5 py-8 sm:px-8 md:grid-cols-[1.3fr_1fr_1fr] lg:px-12">
         <div>
           <div className="flex items-center gap-3">
-            <img src={logo} alt="WhatsUpCloud logo" loading="lazy" decoding="async" className="h-12 w-12 rounded-full bg-white object-contain" />
+            <img src={logo} alt="WhatsUpCloud logo" loading="lazy" decoding="async" className="h-10 w-10 rounded-full bg-white object-contain" />
             <div>
               <p className="text-xl font-black">WhatsUpCloud</p>
             </div>
           </div>
-          <p className="mt-5 max-w-md text-sm leading-6 text-blue-50">
+          <p className="mt-4 max-w-md text-sm leading-6 text-blue-50">
             Practical AI training, automation, digital skills, internships and workshops for students, professionals and businesses.
           </p>
-          <p className="mt-4 inline-flex rounded-full bg-white/10 px-4 py-2 text-sm font-bold text-accent">
+          <p className="mt-3 inline-flex rounded-full bg-white/10 px-4 py-2 text-sm font-bold text-accent">
             Made for Students, Professionals & Business Owners
           </p>
         </div>
         <div>
           <p className="font-bold text-accent">Quick links</p>
-          <div className="mt-4 grid gap-3 text-sm text-blue-50">
+          <div className="mt-3 grid grid-cols-2 gap-x-5 gap-y-2 text-sm text-blue-50 md:grid-cols-1">
             <Link to="/courses">Courses</Link>
             <Link to="/internship">Internship</Link>
             <Link to="/workshop">Workshop</Link>
@@ -41,31 +41,26 @@ export default function Footer() {
         </div>
         <div>
           <p className="font-bold text-accent">Connect</p>
-          <div className="mt-4 flex items-center gap-4">
+          <div className="mt-3 flex items-center gap-4">
             {socialLinks.map(([label, href, icon, alt]) => (
               <a key={label} aria-label={label} className="transition hover:-translate-y-1 hover:opacity-80" href={href} target={href.startsWith("http") ? "_blank" : undefined} rel={href.startsWith("http") ? "noreferrer" : undefined}>
                 <img src={icon} alt={alt} loading="lazy" decoding="async" className="h-8 w-8 object-contain" />
               </a>
             ))}
           </div>
-          <a href={`mailto:${emailAddress}`} className="mt-4 inline-flex text-sm font-semibold text-blue-50 transition hover:text-accent">
+          <a href={`mailto:${emailAddress}`} className="mt-3 inline-flex text-sm font-semibold text-blue-50 transition hover:text-accent">
             {emailAddress}
           </a>
         </div>
-        <div className="md:col-span-3 grid gap-5 border-t border-white/10 pt-8 md:grid-cols-2">
-          <div>
-            <p className="font-bold text-accent">Vision</p>
-            <p className="mt-3 text-sm leading-6 text-blue-50">To make AI education practical, affordable and accessible.</p>
-          </div>
-          <div>
-            <p className="font-bold text-accent">Mission</p>
-            <p className="mt-3 text-sm leading-6 text-blue-50">To train students and professionals with real AI skills, automation and career support.</p>
-          </div>
+        <div className="border-t border-white/10 pt-5 text-sm leading-6 text-blue-50 md:col-span-3">
+          <span className="font-bold text-accent">Vision:</span> Practical, affordable and accessible AI education.
+          <span className="mx-2 hidden text-white/30 sm:inline">|</span>
+          <span className="block sm:inline"><span className="font-bold text-accent">Mission:</span> Real AI skills, automation and career support.</span>
         </div>
       </div>
-      <div className="border-t border-white/10 px-5 py-5 text-center text-sm text-blue-100">
+      <div className="border-t border-white/10 px-5 py-3 text-center text-sm text-blue-100">
         <p>Copyright 2026 WhatsUpCloud. All rights reserved.</p>
-        <p className="mt-2 font-semibold text-green-100">Powered by Inovalytics Technology</p>
+        <p className="mt-1 font-semibold text-green-100">Powered by Inovalytics Technology</p>
       </div>
     </footer>
   );
