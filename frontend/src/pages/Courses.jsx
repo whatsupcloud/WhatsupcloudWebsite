@@ -1,8 +1,7 @@
-import CourseCard from "../components/CourseCard.jsx";
 import LogoRibbon from "../components/LogoRibbon.jsx";
 import ProgramCard from "../components/ProgramCard.jsx";
 import SectionTitle from "../components/SectionTitle.jsx";
-import { additionalCourses, aiCourses } from "../data.js";
+import { additionalCourses } from "../data.js";
 import courseCloud from "../assets/showcase/course-cloud.jpg";
 import courseData from "../assets/showcase/course-data.jpg";
 import courseDevops from "../assets/showcase/course-devops.jpg";
@@ -11,45 +10,41 @@ import courseMarketing from "../assets/showcase/course-marketing.jpg";
 import courseSoftware from "../assets/showcase/course-software.jpg";
 
 export default function Courses() {
-  const featuredPrograms = [
-    ["Generative AI", "AI and ML", "Prompting, LLM workflows, AI productivity and applied automation projects.", courseGenai, ["Prompting", "AI tools", "Projects"]],
-    ["AI Digital Marketing", "Growth", "Campaign thinking, content creation, poster design, social media and lead systems.", courseMarketing, ["Content", "Campaigns", "Leads"]],
-    ["AWS Cloud", "Cloud", "Cloud fundamentals, compute, storage, IAM, networking and architecture basics.", courseCloud, ["AWS", "Cloud labs", "Architecture"]],
-    ["DevOps", "Automation", "Linux, Docker, Kubernetes, Jenkins, Terraform, CI/CD and deployment workflows.", courseDevops, ["CI/CD", "Docker", "Kubernetes"]],
-    ["Full Stack Development", "Software", "Build strong application development foundations with frontend, backend and project practice.", courseSoftware, ["React", "Node", "Projects"]],
-    ["Python and Data Skills", "Data", "Python foundations, analytics thinking, reporting, visualization and business insights.", courseData, ["Python", "Analytics", "Reports"]]
+  const aiPrograms = [
+    ["Generative AI", "AI", "Create content, prompts, images, workflows and practical AI use cases.", courseGenai, ["Prompting", "AI tools", "Projects"]],
+    ["AI Digital Marketing", "Marketing", "Use AI for campaigns, social content, posters, lead generation and growth workflows.", courseMarketing, ["Content", "Campaigns", "Leads"]],
+    ["AI Prompt Engineering", "Prompting", "Build better prompts for research, content, business tasks and automation.", courseData, ["Prompts", "Templates", "Output quality"]],
+    ["AI Automation", "Automation", "Design practical automations for repeated business and career tasks.", courseDevops, ["Workflows", "No-code", "Productivity"]],
+    ["AI for Business", "Business", "Apply AI to operations, sales, support, reporting and team productivity.", courseCloud, ["Business AI", "Reporting", "Support"]],
+    ["AI Project Development", "Projects", "Build portfolio-ready AI projects with real-world problem statements.", courseSoftware, ["Portfolio", "Development", "Use cases"]]
   ];
 
   return (
     <>
       <section className="section bg-blue-50/70">
         <div className="container-max">
-          <SectionTitle eyebrow="Courses" title="AI programs for practical career and business growth" text="Every course is designed around hands-on tools, guided assignments and real output." center />
+          <SectionTitle eyebrow="Courses" title="AI programs for practical career and business growth" text="One clean course list with visual learning paths. No public course prices are shown." center />
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-            {aiCourses.map(([title, description]) => <CourseCard key={title} title={title} description={description} />)}
-          </div>
-        </div>
-      </section>
-      <section className="section">
-        <div className="container-max">
-          <SectionTitle eyebrow="Featured Tracks" title="Career-ready programs with visual learning paths" text="Useful assets from the older WhatsUpCloud project are now reused here as richer program visuals." center />
-          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-            {featuredPrograms.map(([title, subtitle, description, image, tags]) => (
+            {aiPrograms.map(([title, subtitle, description, image, tags]) => (
               <ProgramCard key={title} title={title} subtitle={subtitle} description={description} image={image} tags={tags} />
             ))}
           </div>
         </div>
       </section>
+
       <section className="section">
         <div className="container-max">
           <SectionTitle eyebrow="Additional Courses" title="Technology skills that strengthen your AI journey" center />
-          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-5">
             {additionalCourses.map((course) => (
-              <CourseCard key={course} title={course} description="Build practical technical foundations through guided, career-focused training." />
+              <div key={course} className="rounded-2xl border border-slate-100 bg-white px-4 py-5 text-center text-sm font-black text-primary shadow-sm transition hover:-translate-y-1 hover:shadow-premium">
+                {course}
+              </div>
             ))}
           </div>
         </div>
       </section>
+
       <LogoRibbon />
     </>
   );
