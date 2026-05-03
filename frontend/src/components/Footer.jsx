@@ -1,9 +1,13 @@
-import { Instagram, Mail, Youtube } from "lucide-react";
 import { Link } from "react-router-dom";
 import logo from "../assets/whatsupcloud-logo.png";
 
 const instagramUrl = "https://www.instagram.com/whats_upcloud/";
 const emailAddress = "whatsupcloud26@gmail.com";
+const socialLinks = [
+  ["Instagram", instagramUrl, "https://cdn.simpleicons.org/instagram/E4405F", "Instagram logo"],
+  ["YouTube", "https://youtube.com", "https://cdn.simpleicons.org/youtube/FF0000", "YouTube logo"],
+  ["Email", `mailto:${emailAddress}`, "https://cdn.simpleicons.org/gmail/EA4335", "Gmail logo"]
+];
 
 export default function Footer() {
   return (
@@ -38,24 +42,14 @@ export default function Footer() {
         <div>
           <p className="font-bold text-accent">Connect</p>
           <div className="mt-4 grid gap-3">
-            <a aria-label="Instagram" className="inline-flex items-center gap-3 rounded-2xl bg-white px-4 py-3 text-sm font-black text-primary shadow-sm transition hover:-translate-y-1 hover:bg-accent" href={instagramUrl} target="_blank" rel="noreferrer">
-              <span className="grid h-9 w-9 place-items-center rounded-full bg-brandGreen text-white">
-                <Instagram size={19} />
-              </span>
-              Instagram
-            </a>
-            <a aria-label="YouTube" className="inline-flex items-center gap-3 rounded-2xl bg-white px-4 py-3 text-sm font-black text-primary shadow-sm transition hover:-translate-y-1 hover:bg-accent" href="https://youtube.com" target="_blank" rel="noreferrer">
-              <span className="grid h-9 w-9 place-items-center rounded-full bg-red-600 text-white">
-                <Youtube size={19} />
-              </span>
-              YouTube
-            </a>
-            <a aria-label="Email" className="inline-flex items-center gap-3 rounded-2xl bg-white px-4 py-3 text-sm font-black text-primary shadow-sm transition hover:-translate-y-1 hover:bg-accent" href={`mailto:${emailAddress}`}>
-              <span className="grid h-9 w-9 place-items-center rounded-full bg-secondary text-white">
-                <Mail size={19} />
-              </span>
-              Email
-            </a>
+            {socialLinks.map(([label, href, icon, alt]) => (
+              <a key={label} aria-label={label} className="inline-flex items-center gap-3 rounded-2xl bg-white px-4 py-3 text-sm font-black text-primary shadow-sm transition hover:-translate-y-1 hover:bg-accent" href={href} target={href.startsWith("http") ? "_blank" : undefined} rel={href.startsWith("http") ? "noreferrer" : undefined}>
+                <span className="grid h-10 w-10 place-items-center rounded-full bg-white shadow-sm ring-1 ring-slate-100">
+                  <img src={icon} alt={alt} loading="lazy" decoding="async" className="h-6 w-6 object-contain" />
+                </span>
+                {label}
+              </a>
+            ))}
           </div>
           <a href={`mailto:${emailAddress}`} className="mt-4 inline-flex text-sm font-semibold text-blue-50 transition hover:text-accent">
             {emailAddress}
