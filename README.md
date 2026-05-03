@@ -27,7 +27,7 @@ MONGODB_URI=your_mongodb_atlas_connection_string
 GMAIL_USER=yourgmail@gmail.com
 GMAIL_APP_PASSWORD=your_app_password
 ADMIN_EMAIL=admin@example.com
-CLIENT_URL=http://localhost:5173
+CLIENT_URL=https://your-frontend-domain.com
 PORT=5000
 ```
 
@@ -43,8 +43,8 @@ VITE_API_URL=http://localhost:5000
 npm run dev
 ```
 
-Frontend: `http://localhost:5173`  
-Backend health: `http://localhost:5000/health`
+Frontend: your Vite dev server URL shown in the terminal
+Backend health: your backend URL with `/health`
 
 ## Deployment
 
