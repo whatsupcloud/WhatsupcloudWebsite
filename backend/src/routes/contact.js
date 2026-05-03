@@ -33,11 +33,18 @@ router.post("/", async (request, response, next) => {
       message: request.body.message
     });
 
-    await sendLeadEmails(lead);
+    let emailWarning = "";
+    try {
+      await sendLeadEmails(lead);
+    } catch (emailError) {
+      emailWarning = "Lead saved, but email notification could not be sent.";
+      console.error("Email notification failed:", emailError.message);
+    }
 
     response.status(201).json({
       success: true,
-      message: "Enquiry submitted successfully."
+      message: "Enquiry submitted successfully.",
+      emailWarning
     });
   } catch (error) {
     next(error);

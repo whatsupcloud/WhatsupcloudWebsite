@@ -7,8 +7,8 @@ const internshipNames = ["Generative AI Internship", "AI Digital Marketing Inter
 const workshopNames = ["Generative AI Workshop", "Prompt Engineering Workshop", "AI Digital Marketing Workshop", "AI Automation Workshop", "AI for Business Workshop"];
 
 const initialMessages = [
-  { from: "bot", text: "Hi, how can I help you?" },
-  { from: "bot", text: "Select Courses, Internship, Workshop or Contact. I can also collect your enquiry directly." }
+  { from: "bot", text: "Hi, welcome to WhatsUpCloud. How can I help you today?" },
+  { from: "bot", text: "You can ask about courses, internships, workshops, fees or career support. I can also take your enquiry details." }
 ];
 
 export default function Chatbot() {
@@ -17,8 +17,9 @@ export default function Chatbot() {
   const [messages, setMessages] = useState(initialMessages);
   const [mode, setMode] = useState("idle");
   const [lead, setLead] = useState({ name: "", mobile: "", question: "", course: "General Enquiry" });
+  const [options, setOptions] = useState([]);
   const [loading, setLoading] = useState(false);
-  const suggestions = useMemo(() => ["Courses", "Internship", "Workshop", "Contact"], []);
+  const suggestions = useMemo(() => ["Courses", "Internship", "Workshop", "Fees", "Career Support", "Contact"], []);
 
   const addMessages = (...nextMessages) => {
     setMessages((current) => [...current, ...nextMessages]);
@@ -26,17 +27,19 @@ export default function Chatbot() {
 
   const askContact = (course = "General Enquiry") => {
     setLead({ name: "", mobile: "", question: "", course });
+    setOptions([]);
     setMode("name");
     addMessages(
-      { from: "bot", text: course === "General Enquiry" ? "Sure. What is your name?" : `Great choice: ${course}. What is your name?` }
+      { from: "bot", text: course === "General Enquiry" ? "Sure. Please share your name." : `Great choice: ${course}. Please share your name.` }
     );
   };
 
   const showList = (title, items) => {
+    setOptions(items);
     setMode("idle");
     addMessages({
       from: "bot",
-      text: `${title}\n${items.map((item, index) => `${index + 1}. ${item}`).join("\n")}\n\nSelect any name or type Contact to share your details.`
+      text: `${title}\n${items.map((item, index) => `${index + 1}. ${item}`).join("\n")}\n\nReply with a number or course name to continue.`
     });
   };
 
@@ -62,12 +65,15 @@ export default function Chatbot() {
 
       const data = await response.json();
       if (!response.ok) throw new Error(data.message || "Unable to submit enquiry.");
-      addMessages({ from: "bot", text: "Thank you! Our team will contact you soon." });
+      addMessages({ from: "bot", text: "Thank you. Your enquiry is submitted. Our team will contact you soon." });
       setMode("idle");
       setLead({ name: "", mobile: "", question: "", course: "General Enquiry" });
     } catch (error) {
-      addMessages({ from: "bot", text: error.message });
-      setMode("mobile");
+      addMessages({
+        from: "bot",
+        text: "Sorry, I could not submit it right now. Please use the Contact page form, or try again after a few minutes."
+      });
+      setMode("idle");
     } finally {
       setLoading(false);
     }
@@ -75,6 +81,10 @@ export default function Chatbot() {
 
   const handleFlow = (text) => {
     if (mode === "name") {
+      if (text.length < 2) {
+        addMessages({ from: "bot", text: "Please enter your full name." });
+        return true;
+      }
       setLead((current) => ({ ...current, name: text }));
       setMode("mobile");
       addMessages({ from: "bot", text: "Please share your mobile number." });
@@ -82,9 +92,14 @@ export default function Chatbot() {
     }
 
     if (mode === "mobile") {
+      const mobileDigits = text.replace(/\D/g, "");
+      if (mobileDigits.length < 10 || mobileDigits.length > 15) {
+        addMessages({ from: "bot", text: "Please enter a valid mobile number." });
+        return true;
+      }
       setLead((current) => ({ ...current, mobile: text }));
       setMode("question");
-      addMessages({ from: "bot", text: "What question should our team help you with?" });
+      addMessages({ from: "bot", text: "What should our team help you with?" });
       return true;
     }
 
@@ -110,13 +125,14 @@ export default function Chatbot() {
     const selectedCourse = courseNames.find((course) => course.toLowerCase() === normalized);
     const selectedInternship = internshipNames.find((item) => item.toLowerCase() === normalized);
     const selectedWorkshop = workshopNames.find((item) => item.toLowerCase() === normalized);
+    const selectedByNumber = /^\d+$/.test(normalized) ? options[Number(normalized) - 1] : "";
 
-    if (selectedCourse || selectedInternship || selectedWorkshop) {
-      askContact(selectedCourse || selectedInternship || selectedWorkshop);
+    if (selectedCourse || selectedInternship || selectedWorkshop || selectedByNumber) {
+      askContact(selectedCourse || selectedInternship || selectedWorkshop || selectedByNumber);
       return;
     }
 
-    if (normalized.includes("course")) {
+    if (normalized.includes("course") || normalized.includes("training")) {
       showList("Available courses:", courseNames);
       return;
     }
@@ -132,8 +148,14 @@ export default function Chatbot() {
     }
 
     if (normalized.includes("fee") || normalized.includes("price") || normalized.includes("cost")) {
-      addMessages({ from: "bot", text: "Please share your details. Our team will contact you with complete course details." });
+      addMessages({ from: "bot", text: "Fees depend on the selected course or workshop. Please share your details and our team will guide you." });
       askContact("Fees Enquiry");
+      return;
+    }
+
+    if (normalized.includes("career") || normalized.includes("job") || normalized.includes("resume") || normalized.includes("linkedin")) {
+      addMessages({ from: "bot", text: "We provide resume, LinkedIn, portfolio and mock interview guidance with selected programs." });
+      askContact("Career Support Enquiry");
       return;
     }
 
@@ -142,7 +164,7 @@ export default function Chatbot() {
       return;
     }
 
-    addMessages({ from: "bot", text: "I can help with Courses, Internship, Workshop or Contact. Please select one option." });
+    addMessages({ from: "bot", text: "I can help with Courses, Internship, Workshop, Fees, Career Support or Contact. Please select one option." });
   };
 
   return (
