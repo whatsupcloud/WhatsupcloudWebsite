@@ -1,4 +1,4 @@
-import { Menu, X } from "lucide-react";
+import { Instagram, Mail, Menu, X, Youtube } from "lucide-react";
 import { useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import logo from "../assets/whatsupcloud-logo.png";
@@ -12,6 +12,9 @@ const links = [
   ["E-Book", "/ebook"],
   ["Contact Us", "/contact"]
 ];
+
+const instagramUrl = "https://www.instagram.com/whats_upcloud/";
+const emailAddress = "whatsupcloud26@gmail.com";
 
 export default function Header() {
   const [open, setOpen] = useState(false);
@@ -41,6 +44,15 @@ export default function Header() {
         </nav>
 
         <div className="hidden items-center gap-3 lg:flex">
+          <a aria-label="Instagram" href={instagramUrl} target="_blank" rel="noreferrer" className="grid h-10 w-10 place-items-center rounded-full bg-green-50 text-brandGreen transition hover:-translate-y-1 hover:bg-brandGreen hover:text-white">
+            <Instagram size={18} />
+          </a>
+          <a aria-label="YouTube" href="https://youtube.com" target="_blank" rel="noreferrer" className="grid h-10 w-10 place-items-center rounded-full bg-green-50 text-brandGreen transition hover:-translate-y-1 hover:bg-brandGreen hover:text-white">
+            <Youtube size={18} />
+          </a>
+          <a aria-label="Email" href={`mailto:${emailAddress}`} className="grid h-10 w-10 place-items-center rounded-full bg-green-50 text-brandGreen transition hover:-translate-y-1 hover:bg-brandGreen hover:text-white">
+            <Mail size={18} />
+          </a>
           <Link to="/contact" className="btn-primary">Enquire Now</Link>
         </div>
 
@@ -70,6 +82,17 @@ export default function Header() {
             <Link to="/contact" onClick={() => setOpen(false)} className="btn-primary mt-2 w-full">
               Enquire Now
             </Link>
+            <div className="mt-3 flex gap-3">
+              <a aria-label="Instagram" href={instagramUrl} target="_blank" rel="noreferrer" className="grid h-10 w-10 place-items-center rounded-full bg-green-50 text-brandGreen">
+                <Instagram size={18} />
+              </a>
+              <a aria-label="YouTube" href="https://youtube.com" target="_blank" rel="noreferrer" className="grid h-10 w-10 place-items-center rounded-full bg-green-50 text-brandGreen">
+                <Youtube size={18} />
+              </a>
+              <a aria-label="Email" href={`mailto:${emailAddress}`} className="grid h-10 w-10 place-items-center rounded-full bg-green-50 text-brandGreen">
+                <Mail size={18} />
+              </a>
+            </div>
           </nav>
         </div>
       )}

@@ -1,5 +1,4 @@
 import { Award, BriefcaseBusiness, CheckCircle2, Clock, HelpCircle, Lightbulb, Linkedin, MonitorCheck, Presentation, SearchCheck, Star, Users, Workflow } from "lucide-react";
-import { useState } from "react";
 import { Link } from "react-router-dom";
 import EnquiryForm from "../components/EnquiryForm.jsx";
 import LogoRibbon from "../components/LogoRibbon.jsx";
@@ -22,19 +21,18 @@ function SectionCTA({ label = "Enquire Now" }) {
 }
 
 export default function Home() {
-  const [selectedHeroPoint, setSelectedHeroPoint] = useState("Live Training");
   const heroPoints = [
-    ["Live Training", "Interactive live sessions with trainer guidance."],
-    ["Certificate", "Completion certificate support for your learning profile."],
-    ["Projects", "Hands-on practice with real AI and automation use cases."],
-    ["Career Support", "Resume, LinkedIn and interview guidance for better confidence."]
+    ["Live Training", "/workshop"],
+    ["Certificate", "/courses"],
+    ["Projects", "/internship"],
+    ["Career Support", "/contact"]
   ];
   const benefits = [
-    ["Beginner Friendly", Users],
-    ["Practical Training", Workflow],
-    ["Live Sessions", Clock],
-    ["Certificate", Award],
-    ["Career Support", BriefcaseBusiness]
+    ["Beginner Friendly", Users, "/courses"],
+    ["Practical Training", Workflow, "/workshop"],
+    ["Live Sessions", Clock, "/workshop"],
+    ["Certificate", Award, "/courses"],
+    ["Career Support", BriefcaseBusiness, "/contact"]
   ];
   const joinItems = ["Students", "Job seekers", "Business owners", "Freelancers"];
   const careerSupport = [
@@ -74,22 +72,16 @@ export default function Home() {
               <button type="button" onClick={scrollToForm} className="btn-primary">Register Now</button>
             </div>
             <div className="mt-8 grid grid-cols-2 gap-3 sm:grid-cols-4">
-              {heroPoints.map(([badge]) => (
-                <button
+              {heroPoints.map(([badge, path]) => (
+                <Link
                   key={badge}
-                  type="button"
-                  onClick={() => setSelectedHeroPoint(badge)}
-                  className={`rounded-2xl border px-3 py-3 text-center text-xs font-black shadow-sm transition hover:-translate-y-1 hover:border-brandGreen hover:bg-brandGreen hover:text-white focus:outline-none focus:ring-2 focus:ring-brandGreen focus:ring-offset-2 ${
-                    selectedHeroPoint === badge ? "border-brandGreen bg-brandGreen text-white" : "border-white bg-white/85 text-primary"
-                  }`}
+                  to={path}
+                  className="rounded-2xl border border-white bg-white/85 px-3 py-3 text-center text-xs font-black text-primary shadow-sm transition hover:-translate-y-1 hover:border-brandGreen hover:bg-brandGreen hover:text-white focus:outline-none focus:ring-2 focus:ring-brandGreen focus:ring-offset-2"
                 >
                   {badge}
-                </button>
+                </Link>
               ))}
             </div>
-            <p className="mt-4 rounded-2xl bg-green-50 px-4 py-3 text-sm font-bold leading-6 text-brandGreen">
-              {heroPoints.find(([badge]) => badge === selectedHeroPoint)?.[1]}
-            </p>
           </div>
 
           <div className="relative">
@@ -113,11 +105,11 @@ export default function Home() {
         <div className="container-max">
           <SectionTitle eyebrow="Benefits" title="Built for fast understanding and practical action" center />
           <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-5">
-            {benefits.map(([title, Icon]) => (
-              <div key={title} className="rounded-2xl bg-white p-6 text-center font-black text-primary shadow-premium">
+            {benefits.map(([title, Icon, path]) => (
+              <Link key={title} to={path} className="rounded-2xl bg-white p-6 text-center font-black text-primary shadow-premium transition hover:-translate-y-1 hover:bg-green-50 hover:text-brandGreen">
                 <Icon className="mx-auto mb-4 text-brandGreen" size={30} />
                 {title}
-              </div>
+              </Link>
             ))}
           </div>
           <SectionCTA />
@@ -145,11 +137,11 @@ export default function Home() {
           <SectionTitle eyebrow="Workshop Flow" title="Simple path from enquiry to AI execution" center />
           <div className="grid gap-5 md:grid-cols-3">
             {flow.map((item, index) => (
-              <div key={item} className="rounded-3xl bg-primary p-6 text-white shadow-premium">
+              <Link key={item} to={index === 1 ? "/workshop" : "/contact"} className="rounded-3xl bg-primary p-6 text-white shadow-premium transition hover:-translate-y-1">
                 <p className="grid h-12 w-12 place-items-center rounded-2xl bg-brandGreen text-xl font-black text-white">{index + 1}</p>
                 <h3 className="mt-8 text-2xl font-black">{item}</h3>
                 <p className="mt-3 text-sm leading-6 text-blue-50">A clear, guided step that keeps the learning process simple and action-focused.</p>
-              </div>
+              </Link>
             ))}
           </div>
           <SectionCTA />
@@ -245,11 +237,11 @@ export default function Home() {
           <SectionTitle eyebrow="Projects" title="Real-world AI project gallery" text="Build practical outputs for internships, portfolios and business automation use cases." center />
           <div className="grid gap-5 md:grid-cols-3">
             {["AI Projects", "Internship projects", "Real-world project gallery"].map((project, index) => (
-              <div key={project} className="min-h-64 rounded-3xl bg-primary p-6 text-white shadow-premium tech-grid">
+              <Link key={project} to="/internship" className="min-h-64 rounded-3xl bg-primary p-6 text-white shadow-premium tech-grid transition hover:-translate-y-1">
                 <p className="inline-flex rounded-full bg-brandGreen px-4 py-2 text-xs font-black text-white">Project {index + 1}</p>
                 <h3 className="mt-20 text-2xl font-black">{project}</h3>
                 <p className="mt-3 text-sm leading-6 text-blue-50">Guided project work with practical problem statements and presentation-ready outcomes.</p>
-              </div>
+              </Link>
             ))}
           </div>
           <SectionCTA />

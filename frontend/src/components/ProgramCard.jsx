@@ -1,9 +1,9 @@
 import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 
-export default function ProgramCard({ title, subtitle, description, image, tags = [] }) {
+export default function ProgramCard({ title, subtitle, description, image, tags = [], to = "/contact" }) {
   return (
-    <article className="overflow-hidden rounded-2xl border border-slate-100 bg-white shadow-premium transition duration-300 hover:-translate-y-1">
+    <Link to={to} className="block overflow-hidden rounded-2xl border border-slate-100 bg-white shadow-premium transition duration-300 hover:-translate-y-1">
       {image && (
         <div className="aspect-[16/10] overflow-hidden bg-blue-50">
           <img src={image} alt={`${title} training visual`} loading="lazy" decoding="async" className="h-full w-full object-cover" />
@@ -22,10 +22,10 @@ export default function ProgramCard({ title, subtitle, description, image, tags 
             ))}
           </div>
         )}
-        <Link to="/contact" className="mt-6 inline-flex items-center gap-2 text-sm font-black text-brandGreen">
+        <span className="mt-6 inline-flex items-center gap-2 text-sm font-black text-brandGreen">
           Enquire Now <ArrowRight size={17} />
-        </Link>
+        </span>
       </div>
-    </article>
+    </Link>
   );
 }
