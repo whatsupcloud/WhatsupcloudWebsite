@@ -1,5 +1,3 @@
-import SectionTitle from "./SectionTitle.jsx";
-
 const reviews = [
   ["Very practical session", "Thank you Snehal mam. The workshop was very practical and helped me understand how to use AI tools in daily work.", "Shilpa Suradkar"],
   ["Easy to understand", "Thank you Snehal mam for explaining everything step by step. The session was beginner friendly and clear.", "Sampada Gokhale"],
@@ -13,12 +11,6 @@ export default function ReviewsSection() {
   return (
     <section className="section bg-blue-50/70">
       <div className="container-max">
-        <SectionTitle
-          eyebrow="Reviews"
-          title="Learner reviews in one place"
-          text="Workshop feedback from learners who appreciated the practical, step-by-step and beginner-friendly experience."
-          center
-        />
         <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {reviews.map(([title, text, name]) => (
             <div key={title} className="premium-card">
