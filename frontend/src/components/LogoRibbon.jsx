@@ -15,7 +15,6 @@ export default function LogoRibbon({ compact = false }) {
         <SectionTitle
           eyebrow="Learning Network"
           title="Industry and campus collaboration for practical learning"
-          text="No placeholder partner names. This section shows how WhatsUpCloud connects workshops, internships, projects and tool-based training into one practical learning ecosystem."
           center
         />
 
