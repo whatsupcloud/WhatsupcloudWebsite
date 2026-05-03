@@ -1,0 +1,126 @@
+import { Award, BriefcaseBusiness, CheckCircle2, GraduationCap, Lightbulb, Rocket } from "lucide-react";
+import { Link } from "react-router-dom";
+import CourseCard from "../components/CourseCard.jsx";
+import EnquiryForm from "../components/EnquiryForm.jsx";
+import SectionTitle from "../components/SectionTitle.jsx";
+import VisualPanel from "../components/VisualPanel.jsx";
+import { additionalCourses, aiCourses } from "../data.js";
+
+export default function Home() {
+  return (
+    <>
+      <section className="section orb-free-gradient">
+        <div className="container-max grid items-center gap-12 lg:grid-cols-[1.05fr_0.95fr]">
+          <div>
+            <p className="eyebrow">WhatsUpCloud AI Training Institute</p>
+            <h1 className="mt-4 max-w-4xl text-4xl font-black leading-tight tracking-normal text-primary sm:text-5xl lg:text-6xl">
+              Learn AI Skills for Career, Business & Growth
+            </h1>
+            <p className="mt-6 max-w-2xl text-lg leading-8 text-slate-700">
+              Practical AI training with latest tools, automation, real projects and career support.
+            </p>
+            <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+              <Link to="/courses" className="btn-primary">Explore Courses</Link>
+              <Link to="/contact" className="btn-secondary">Enquire Now</Link>
+            </div>
+            <div className="mt-8 grid grid-cols-2 gap-3 sm:grid-cols-4">
+              {["Live Training", "Certificate", "Projects", "Career Support"].map((badge) => (
+                <div key={badge} className="rounded-2xl border border-white bg-white/85 px-4 py-3 text-center text-sm font-black text-primary shadow-sm">
+                  {badge}
+                </div>
+              ))}
+            </div>
+          </div>
+          <VisualPanel />
+        </div>
+      </section>
+
+      <section className="section">
+        <div className="container-max">
+          <SectionTitle eyebrow="AI Courses" title="Training programs built around real tools and projects" text="Choose a practical AI path for career growth, business productivity, content, automation or project development." center />
+          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+            {aiCourses.map(([title, description]) => <CourseCard key={title} title={title} description={description} />)}
+          </div>
+        </div>
+      </section>
+
+      <section className="section bg-blue-50/70">
+        <div className="container-max grid gap-10 lg:grid-cols-[0.9fr_1.1fr]">
+          <div>
+            <SectionTitle eyebrow="Additional Courses" title="Cloud, DevOps and development skills" text="Support your AI learning with practical technical foundations for modern digital work." />
+            <div className="grid grid-cols-2 gap-3 sm:grid-cols-3">
+              {additionalCourses.map((course) => (
+                <div key={course} className="rounded-2xl bg-white px-4 py-4 text-sm font-black text-primary shadow-sm">
+                  {course}
+                </div>
+              ))}
+            </div>
+          </div>
+          <div className="grid gap-5 sm:grid-cols-2">
+            {[
+              [GraduationCap, "AI Internship", "30 / 45 / 60 days project-based internship with certificate."],
+              [BriefcaseBusiness, "Workshop", "AI Digital Marketing workshop for content and lead generation."],
+              [Rocket, "Projects", "Real-world project gallery for portfolio confidence."],
+              [Award, "E-Books", "AI tools, digital marketing and prompt engineering guides."]
+            ].map(([Icon, title, text]) => (
+              <div key={title} className="premium-card">
+                <Icon className="text-brandGreen" size={30} />
+                <h3 className="mt-4 text-xl font-black text-primary">{title}</h3>
+                <p className="mt-2 text-sm leading-6 text-slate-600">{text}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="section">
+        <div className="container-max grid gap-10 lg:grid-cols-[1fr_0.9fr]">
+          <div>
+            <SectionTitle eyebrow="Internship" title="Project-based AI internship" text="Build confidence with guided learning, practical assignments and career preparation." />
+            <div className="grid gap-3">
+              {["AI Internship", "Project-based learning", "30 / 45 / 60 days", "Certificate", "Resume + LinkedIn support", "Mock interviews"].map((item) => (
+                <div key={item} className="flex items-center gap-3 rounded-2xl border border-slate-100 bg-white p-4 shadow-sm">
+                  <CheckCircle2 className="shrink-0 text-brandGreen" size={21} />
+                  <span className="font-bold text-slate-700">{item}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+          <EnquiryForm compact />
+        </div>
+      </section>
+
+      <section className="section bg-green-50/70">
+        <div className="container-max">
+          <SectionTitle eyebrow="Workshop" title="AI Digital Marketing Workshop" text="Hands-on workshop for AI image creation, poster design, Instagram content, WhatsApp Business, lead generation and automation basics." center />
+          <div className="grid gap-5 md:grid-cols-3">
+            {["AI image creation", "AI poster design", "Instagram content", "WhatsApp Business", "Lead generation", "Automation basics"].map((item) => (
+              <div key={item} className="rounded-2xl bg-white p-6 text-center font-black text-primary shadow-sm">
+                <Lightbulb className="mx-auto mb-4 text-accent" size={28} />
+                {item}
+              </div>
+            ))}
+          </div>
+          <div className="mt-8 text-center">
+            <Link to="/contact" className="btn-primary">Enquire Now</Link>
+          </div>
+        </div>
+      </section>
+
+      <section className="section">
+        <div className="container-max">
+          <SectionTitle eyebrow="Projects" title="Real-world AI project gallery" text="Build practical outputs for internships, portfolios and business automation use cases." center />
+          <div className="grid gap-5 md:grid-cols-3">
+            {["AI Projects", "Internship projects", "Real-world project gallery"].map((project, index) => (
+              <div key={project} className="min-h-64 rounded-3xl bg-primary p-6 text-white shadow-premium tech-grid">
+                <p className="inline-flex rounded-full bg-accent px-4 py-2 text-xs font-black text-primary">Project {index + 1}</p>
+                <h3 className="mt-20 text-2xl font-black">{project}</h3>
+                <p className="mt-3 text-sm leading-6 text-blue-50">Guided project work with practical problem statements and presentation-ready outcomes.</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+    </>
+  );
+}
