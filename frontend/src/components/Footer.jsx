@@ -11,10 +11,10 @@ const socialLinks = [
 export default function Footer() {
   return (
     <footer className="border-t border-slate-100 bg-primary text-white">
-      <div className="container-max grid gap-8 px-5 py-8 sm:px-8 md:grid-cols-2 lg:px-12">
+      <div className="container-max grid gap-8 px-5 py-8 sm:px-8 lg:px-12">
         <div>
           <p className="font-bold text-accent">Quick links</p>
-          <div className="mt-3 flex flex-col items-start gap-2 text-sm text-blue-50">
+          <div className="mt-3 flex flex-wrap items-center gap-x-5 gap-y-2 text-sm text-blue-50">
             <Link to="/courses">Courses</Link>
             <Link to="/internship">Internship</Link>
             <Link to="/workshop">Workshop</Link>
@@ -26,7 +26,7 @@ export default function Footer() {
         </div>
         <div>
           <p className="font-bold text-accent">Connect</p>
-          <div className="mt-3 flex flex-col items-start gap-3">
+          <div className="mt-3 flex items-center gap-4">
             {socialLinks.map(([label, href, icon, alt]) => (
               <a key={label} aria-label={label} className="transition hover:-translate-y-1 hover:opacity-80" href={href} target={href.startsWith("http") ? "_blank" : undefined} rel={href.startsWith("http") ? "noreferrer" : undefined}>
                 <img src={icon} alt={alt} loading="lazy" decoding="async" className="h-8 w-8 object-contain" />
