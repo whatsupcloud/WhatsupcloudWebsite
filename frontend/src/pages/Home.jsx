@@ -59,7 +59,7 @@ export default function Home() {
               <div className="relative aspect-[4/5] overflow-hidden rounded-[1.5rem] bg-blue-50">
                 <img src={trainerPhoto} alt="AI Trainer and Mentor" className="h-full w-full object-cover object-center" />
                 <div className="absolute inset-x-5 bottom-5 rounded-2xl bg-white/92 p-4 shadow-xl backdrop-blur">
-                  <p className="text-xs font-black uppercase tracking-[0.16em] text-brandGreen">AI Trainer & Mentor</p>
+                  <p className="text-xs font-black uppercase tracking-[0.16em] text-brandGreen">Founder | Mentor | Woman Entrepreneur | AI Expert</p>
                   <p className="mt-1 text-lg font-black text-primary">Practical AI learning with guided support</p>
                 </div>
               </div>
