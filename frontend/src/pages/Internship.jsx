@@ -36,7 +36,7 @@ export default function Internship() {
       </section>
       <section className="section">
         <div className="container-max">
-          <SectionTitle eyebrow="Internship Tracks" title="Choose a practical internship pathway" text="Each track combines mentor-led tasks, project practice, documentation and completion support." center />
+          <SectionTitle eyebrow="Internship Tracks" title="Choose a practical internship pathway" center />
           <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-4">
             {tracks.map(([title, subtitle, description, image, tags]) => (
               <ProgramCard key={title} title={title} subtitle={subtitle} description={description} image={image} tags={tags} />
