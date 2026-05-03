@@ -1,6 +1,5 @@
 ﻿import { Bot, BrainCircuit, Building2, Cpu, GraduationCap, Image, Megaphone, Palette, Sparkles, Target, Workflow } from "lucide-react";
 import { Link } from "react-router-dom";
-import LogoRibbon from "../components/LogoRibbon.jsx";
 import SectionTitle from "../components/SectionTitle.jsx";
 import courseData from "../assets/showcase/course-data.jpg";
 import courseDevops from "../assets/showcase/course-devops.jpg";
@@ -83,8 +82,6 @@ export default function Workshop() {
           </div>
         </div>
       </section>
-
-      <LogoRibbon compact />
 
       <section className="section bg-blue-50/70">
         <div className="container-max">

@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-import LogoRibbon from "../components/LogoRibbon.jsx";
 import ProgramCard from "../components/ProgramCard.jsx";
 import SectionTitle from "../components/SectionTitle.jsx";
 import courseCloud from "../assets/showcase/course-cloud.jpg";
@@ -26,12 +25,6 @@ export default function Courses() {
     ["Python", "Programming foundations, automation scripts, data handling and practical coding confidence."],
     ["Java", "Core Java, OOP concepts, backend foundations and project-oriented programming practice."],
     ["Full Stack Development", "Frontend, backend, APIs, database integration and complete project development."]
-  ];
-  const reviews = [
-    ["Practical learning", "The course examples were practical and easy to connect with daily work, projects and career goals.", "Shilpa Suradkar"],
-    ["Clear explanation", "Concepts were explained step by step, so beginners could understand AI tools without confusion.", "Sampada Gokhale"],
-    ["Useful projects", "The project-based approach helped me build confidence and understand how to apply the tools.", "Chhaya Madam's Coaching Classes"],
-    ["Career focused", "The training gave useful direction for resume, LinkedIn, interviews and practical skill development.", "Shubhangi Govin"]
   ];
 
   return (
@@ -61,26 +54,6 @@ export default function Courses() {
           </div>
         </div>
       </section>
-
-      <section className="section bg-green-50/70">
-        <div className="container-max">
-          <SectionTitle eyebrow="Reviews" title="What learners say about the courses" text="Short, practical feedback from learners who joined WhatsUpCloud training programs." center />
-          <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-4">
-            {reviews.map(([title, text, name]) => (
-              <div key={title} className="rounded-3xl border border-slate-100 bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-premium">
-                <div className="flex gap-1 text-brandGreen" aria-label="5 star rating">
-                  {[1, 2, 3, 4, 5].map((star) => <span key={star}>★</span>)}
-                </div>
-                <h3 className="mt-4 text-lg font-black text-primary">{title}</h3>
-                <p className="mt-3 text-sm leading-6 text-slate-600">{text}</p>
-                <p className="mt-5 border-t border-slate-100 pt-4 text-sm font-black text-brandGreen">{name}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <LogoRibbon />
     </>
   );
 }
