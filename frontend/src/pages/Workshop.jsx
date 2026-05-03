@@ -1,4 +1,4 @@
-import { Bot, BrainCircuit, Building2, Cpu, GraduationCap, Image, Megaphone, Palette, Sparkles, Target, Workflow } from "lucide-react";
+﻿import { Bot, BrainCircuit, Building2, Cpu, GraduationCap, Image, Megaphone, Palette, Sparkles, Target, Workflow } from "lucide-react";
 import { Link } from "react-router-dom";
 import LogoRibbon from "../components/LogoRibbon.jsx";
 import SectionTitle from "../components/SectionTitle.jsx";
@@ -21,9 +21,6 @@ export default function Workshop() {
     ["Image and poster creation", Image],
     ["Automation basics", Workflow]
   ];
-
-  const companyPartners = ["Inovalytics Technology", "Cloud Labs", "AI Studio", "Tech Mentors"];
-  const collegePartners = ["College Partner 01", "College Partner 02", "Campus Partner", "Training Cell"];
   const reviews = [
     ["Very practical session", "The workshop helped me understand how AI tools can be used for content, posters and daily work."],
     ["Beginner friendly", "The trainer explained every step clearly. I could follow the session even without technical background."],
@@ -67,34 +64,6 @@ export default function Workshop() {
         </div>
       </section>
 
-      <section className="section">
-        <div className="container-max">
-          <SectionTitle eyebrow="Partners" title="Company and college partner network" text="Partnership spaces for industry collaborators, colleges, campus cells and training partners." center />
-          <div className="grid gap-8 lg:grid-cols-2">
-            <div>
-              <h3 className="mb-4 text-xl font-black text-primary">Company Partners</h3>
-              <div className="grid grid-cols-2 gap-4 sm:grid-cols-4 lg:grid-cols-2 xl:grid-cols-4">
-                {companyPartners.map((partner) => (
-                  <div key={partner} className="grid min-h-24 place-items-center rounded-2xl border border-slate-100 bg-white px-4 text-center text-sm font-black text-primary shadow-sm">
-                    {partner}
-                  </div>
-                ))}
-              </div>
-            </div>
-            <div>
-              <h3 className="mb-4 text-xl font-black text-primary">College Partners</h3>
-              <div className="grid grid-cols-2 gap-4 sm:grid-cols-4 lg:grid-cols-2 xl:grid-cols-4">
-                {collegePartners.map((partner) => (
-                  <div key={partner} className="grid min-h-24 place-items-center rounded-2xl border border-slate-100 bg-white px-4 text-center text-sm font-black text-brandGreen shadow-sm">
-                    {partner}
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
       <LogoRibbon compact />
 
       <section className="section bg-blue-50/70">
@@ -133,3 +102,4 @@ export default function Workshop() {
     </>
   );
 }
+
