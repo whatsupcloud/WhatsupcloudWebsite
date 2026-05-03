@@ -50,7 +50,7 @@ export default function EnquiryForm({ compact = false }) {
 
   return (
     <form id="enquiry-form" onSubmit={submit} className={`premium-card scroll-mt-28 ${compact ? "p-5" : "p-6 sm:p-8"}`}>
-      <h2 className="mb-5 text-2xl font-black text-primary">Fill this form to get complete course details</h2>
+      <h2 className="mb-5 text-2xl font-black text-primary">Submit Enquiry</h2>
       <div className="grid gap-4 sm:grid-cols-2">
         <label className="grid gap-2 text-sm font-bold text-slate-700">
           Name

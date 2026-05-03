@@ -37,7 +37,7 @@ export default function LeadPopup() {
       <h3 className="mt-3 pr-8 text-2xl font-black text-primary">Want to Learn AI?</h3>
       <p className="mt-2 text-sm leading-6 text-slate-600">Fill the form and our team will contact you.</p>
       <button type="button" onClick={scrollToForm} className="btn-primary mt-5 w-full">
-        Register Now
+        Enquire Now
       </button>
     </div>
   );

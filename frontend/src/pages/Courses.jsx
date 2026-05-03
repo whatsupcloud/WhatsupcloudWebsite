@@ -31,7 +31,7 @@ export default function Courses() {
     <>
       <section className="section bg-blue-50/70">
         <div className="container-max">
-          <SectionTitle eyebrow="Courses" title="AI programs for practical career and business growth" text="One clean course list with visual learning paths. No public course prices are shown." center />
+          <SectionTitle eyebrow="Courses" title="AI programs for practical career and business growth" text="One clean course list with visual learning paths and enquiry-based guidance." center />
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
             {aiPrograms.map(([title, subtitle, description, image, tags]) => (
               <ProgramCard key={title} title={title} subtitle={subtitle} description={description} image={image} tags={tags} />
