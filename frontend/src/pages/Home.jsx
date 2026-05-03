@@ -1,4 +1,4 @@
-import { Award, BookOpen, BriefcaseBusiness, CheckCircle2, GraduationCap, HelpCircle, Lightbulb, Star, Users, Workflow } from "lucide-react";
+import { Award, BookOpen, BriefcaseBusiness, GraduationCap, HelpCircle, Lightbulb, Star, Users, Workflow } from "lucide-react";
 import { Link } from "react-router-dom";
 import EnquiryForm from "../components/EnquiryForm.jsx";
 import LogoRibbon from "../components/LogoRibbon.jsx";
@@ -145,18 +145,7 @@ export default function Home() {
       </section>
 
       <section className="section bg-green-50/70">
-        <div className="container-max grid gap-10 lg:grid-cols-[0.85fr_1.15fr]">
-          <div>
-            <SectionTitle eyebrow="Register" title="Fill this form to get complete course details" text="Submit your enquiry and the WhatsUpCloud team will contact you soon." />
-            <div className="grid gap-3">
-              {["No public course prices", "No WhatsApp number displayed publicly", "MongoDB lead storage", "Admin and user email notifications"].map((item) => (
-                <div key={item} className="flex items-center gap-3 rounded-2xl bg-white p-4 text-sm font-bold text-slate-700 shadow-sm">
-                  <CheckCircle2 className="shrink-0 text-brandGreen" size={20} />
-                  {item}
-                </div>
-              ))}
-            </div>
-          </div>
+        <div className="container-max max-w-3xl">
           <EnquiryForm compact />
         </div>
       </section>
