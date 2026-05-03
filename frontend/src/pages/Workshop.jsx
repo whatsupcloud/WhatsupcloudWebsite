@@ -1,5 +1,6 @@
 import { Bot, BrainCircuit, Building2, Cpu, GraduationCap, Image, Megaphone, Palette, Sparkles, Target, Workflow } from "lucide-react";
 import { Link } from "react-router-dom";
+import LogoRibbon from "../components/LogoRibbon.jsx";
 import SectionTitle from "../components/SectionTitle.jsx";
 import review01 from "../assets/reviews/review-story-01.png";
 import review02 from "../assets/reviews/review-story-02.png";
@@ -27,7 +28,7 @@ export default function Workshop() {
     ["Automation basics", Workflow]
   ];
 
-  const companyPartners = ["Inovalytics", "Cloud Labs", "AI Studio", "Tech Mentors"];
+  const companyPartners = ["Inovalytics Technology", "Cloud Labs", "AI Studio", "Tech Mentors"];
   const collegePartners = ["College Partner 01", "College Partner 02", "Campus Partner", "Training Cell"];
   const reviews = [review01, review02, review03, review04, review05, review06];
 
@@ -92,6 +93,8 @@ export default function Workshop() {
           </div>
         </div>
       </section>
+
+      <LogoRibbon compact />
 
       <section className="section bg-blue-50/70">
         <div className="container-max">

@@ -1,0 +1,12 @@
+﻿<svg xmlns='http://www.w3.org/2000/svg' width='220' height='220' viewBox='0 0 220 220'>
+  <defs>
+    <linearGradient id='g' x1='0' y1='0' x2='1' y2='1'>
+      <stop offset='0%' stop-color='#0A4DA2'/>
+      <stop offset='100%' stop-color='#2B8CFF'/>
+    </linearGradient>
+  </defs>
+  <rect width='220' height='220' rx='26' fill='url(#g)'/>
+  <circle cx='110' cy='84' r='52' fill='rgba(255,255,255,0.18)'/>
+  <text x='110' y='92' text-anchor='middle' fill='white' font-family='Segoe UI, Arial, sans-serif' font-size='22' font-weight='700'>TCS</text>
+  <text x='110' y='160' text-anchor='middle' fill='white' font-family='Segoe UI, Arial, sans-serif' font-size='16' font-weight='600'>Tata Consultancy Services</text>
+</svg>

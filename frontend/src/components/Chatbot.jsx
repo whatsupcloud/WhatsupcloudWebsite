@@ -14,7 +14,7 @@ export default function Chatbot() {
   const [open, setOpen] = useState(false);
   const [input, setInput] = useState("");
   const [messages, setMessages] = useState([{ from: "bot", text: "Hi, how can I help you?" }]);
-  const suggestions = useMemo(() => ["Courses", "Internship", "Fees"], []);
+  const suggestions = useMemo(() => ["Courses", "Internship", "Guidance"], []);
 
   const send = (text = input) => {
     if (!text.trim()) return;

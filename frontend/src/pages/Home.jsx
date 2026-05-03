@@ -2,9 +2,14 @@ import { Award, BriefcaseBusiness, CheckCircle2, GraduationCap, Lightbulb, Rocke
 import { Link } from "react-router-dom";
 import CourseCard from "../components/CourseCard.jsx";
 import EnquiryForm from "../components/EnquiryForm.jsx";
+import LogoRibbon from "../components/LogoRibbon.jsx";
+import ProgramCard from "../components/ProgramCard.jsx";
 import SectionTitle from "../components/SectionTitle.jsx";
 import VisualPanel from "../components/VisualPanel.jsx";
 import { additionalCourses, aiCourses } from "../data.js";
+import placementLinkedin from "../assets/showcase/placement-linkedin.jpg";
+import placementMock from "../assets/showcase/placement-mock.jpg";
+import placementResume from "../assets/showcase/placement-resume.jpg";
 
 export default function Home() {
   return (
@@ -90,6 +95,21 @@ export default function Home() {
         </div>
       </section>
 
+      <section className="section bg-blue-50/70">
+        <div className="container-max">
+          <SectionTitle eyebrow="Career Support" title="Placement readiness support for stronger student presentation" text="The older WhatsUpCloud project had strong placement content, so it is now reused as a focused career-support area." center />
+          <div className="grid gap-6 md:grid-cols-3">
+            {[
+              ["Resume Building", "Profile", "ATS-friendly resume structure, project framing and role-focused presentation.", placementResume, ["Resume", "Projects"]],
+              ["LinkedIn Optimization", "Branding", "Better profile clarity, professional positioning and visibility support.", placementLinkedin, ["LinkedIn", "Profile"]],
+              ["Mock Interviews", "Practice", "Technical, HR and communication practice to improve confidence.", placementMock, ["Interview", "Confidence"]]
+            ].map(([title, subtitle, description, image, tags]) => (
+              <ProgramCard key={title} title={title} subtitle={subtitle} description={description} image={image} tags={tags} />
+            ))}
+          </div>
+        </div>
+      </section>
+
       <section className="section bg-green-50/70">
         <div className="container-max">
           <SectionTitle eyebrow="Workshops" title="AI workshops beyond digital marketing" text="Explore practical workshops in Generative AI, Prompt Engineering, AI Automation, Business AI, Content Creation and AI Digital Marketing." center />
@@ -121,6 +141,8 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      <LogoRibbon />
     </>
   );
 }
