@@ -1,4 +1,5 @@
 import { Award, BriefcaseBusiness, CheckCircle2, Clock, HelpCircle, Lightbulb, Star, Users, Workflow } from "lucide-react";
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import CourseCard from "../components/CourseCard.jsx";
 import EnquiryForm from "../components/EnquiryForm.jsx";
@@ -27,7 +28,13 @@ function SectionCTA({ label = "Enquire Now" }) {
 }
 
 export default function Home() {
-  const heroPoints = ["Live Training", "Certificate", "Projects", "Career Support", "Limited Seats Available"];
+  const [selectedHeroPoint, setSelectedHeroPoint] = useState("Live Training");
+  const heroPoints = [
+    ["Live Training", "Interactive live sessions with trainer guidance."],
+    ["Certificate", "Completion certificate support for your learning profile."],
+    ["Projects", "Hands-on practice with real AI and automation use cases."],
+    ["Career Support", "Resume, LinkedIn and interview guidance for better confidence."]
+  ];
   const benefits = [
     ["Beginner Friendly", Users],
     ["Practical Training", Workflow],
@@ -71,20 +78,27 @@ export default function Home() {
             <p className="mt-4 inline-flex rounded-full bg-green-50 px-4 py-2 text-sm font-black text-brandGreen">
               No prior experience required
             </p>
-            <p className="ml-0 mt-3 inline-flex rounded-full bg-primary px-4 py-2 text-sm font-black text-white shadow-sm sm:ml-3">
-              Limited Seats Available
-            </p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <Link to="/courses" className="btn-primary">Explore Courses</Link>
               <button type="button" onClick={scrollToForm} className="btn-primary">Register Now</button>
             </div>
-            <div className="mt-8 grid grid-cols-2 gap-3 sm:grid-cols-5">
-              {heroPoints.map((badge) => (
-                <div key={badge} className={`rounded-2xl border border-white px-3 py-3 text-center text-xs font-black shadow-sm ${badge === "Limited Seats Available" ? "bg-brandGreen text-white" : "bg-white/85 text-primary"}`}>
+            <div className="mt-8 grid grid-cols-2 gap-3 sm:grid-cols-4">
+              {heroPoints.map(([badge]) => (
+                <button
+                  key={badge}
+                  type="button"
+                  onClick={() => setSelectedHeroPoint(badge)}
+                  className={`rounded-2xl border px-3 py-3 text-center text-xs font-black shadow-sm transition hover:-translate-y-1 hover:border-brandGreen hover:bg-brandGreen hover:text-white focus:outline-none focus:ring-2 focus:ring-brandGreen focus:ring-offset-2 ${
+                    selectedHeroPoint === badge ? "border-brandGreen bg-brandGreen text-white" : "border-white bg-white/85 text-primary"
+                  }`}
+                >
                   {badge}
-                </div>
+                </button>
               ))}
             </div>
+            <p className="mt-4 rounded-2xl bg-green-50 px-4 py-3 text-sm font-bold leading-6 text-brandGreen">
+              {heroPoints.find(([badge]) => badge === selectedHeroPoint)?.[1]}
+            </p>
           </div>
 
           <div className="relative">
