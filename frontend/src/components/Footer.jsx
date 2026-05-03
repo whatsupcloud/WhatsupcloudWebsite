@@ -11,10 +11,10 @@ const socialLinks = [
 export default function Footer() {
   return (
     <footer className="border-t border-slate-100 bg-primary text-white">
-      <div className="container-max grid gap-8 px-5 py-8 sm:px-8 md:grid-cols-[1.3fr_1fr_1fr] lg:px-12">
+      <div className="container-max grid gap-8 px-5 py-8 sm:px-8 md:grid-cols-2 lg:px-12">
         <div>
           <p className="font-bold text-accent">Quick links</p>
-          <div className="mt-3 grid grid-cols-2 gap-x-5 gap-y-2 text-sm text-blue-50 md:grid-cols-1">
+          <div className="mt-3 flex flex-col items-start gap-2 text-sm text-blue-50">
             <Link to="/courses">Courses</Link>
             <Link to="/internship">Internship</Link>
             <Link to="/workshop">Workshop</Link>
