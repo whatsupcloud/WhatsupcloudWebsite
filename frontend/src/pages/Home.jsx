@@ -1,6 +1,5 @@
 import { Award, BookOpen, BriefcaseBusiness, GraduationCap, HelpCircle, Lightbulb, Star, Users, Workflow } from "lucide-react";
 import { Link } from "react-router-dom";
-import EnquiryForm from "../components/EnquiryForm.jsx";
 import LogoRibbon from "../components/LogoRibbon.jsx";
 import SectionTitle from "../components/SectionTitle.jsx";
 import courseGenai from "../assets/showcase/course-genai.jpg";
@@ -8,8 +7,7 @@ import courseMarketing from "../assets/showcase/course-marketing.jpg";
 import trainerPhoto from "../assets/trainer-photo.jpg";
 
 function scrollToForm() {
-  const form = document.getElementById("enquiry-form");
-  if (form) form.scrollIntoView({ behavior: "smooth", block: "start" });
+  window.location.href = "/contact#enquiry-form";
 }
 
 export default function Home() {
@@ -141,12 +139,6 @@ export default function Home() {
               </div>
             ))}
           </div>
-        </div>
-      </section>
-
-      <section className="section bg-green-50/70">
-        <div className="container-max max-w-3xl">
-          <EnquiryForm compact />
         </div>
       </section>
 

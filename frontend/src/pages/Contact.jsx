@@ -24,7 +24,7 @@ export default function Contact() {
             </a>
           </div>
         </div>
-        <EnquiryForm />
+        <EnquiryForm compact />
       </div>
     </section>
   );
