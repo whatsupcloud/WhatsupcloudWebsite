@@ -35,7 +35,14 @@ export default function Home() {
     ["Certificate", Award],
     ["Career Support", BriefcaseBusiness]
   ];
-  const learnItems = ["AI image creation", "AI posters", "Instagram growth", "WhatsApp Business", "Lead generation", "Automation"];
+  const learnItems = [
+    "Create AI images for posts, ads and branding",
+    "Design posters, banners and social media creatives",
+    "Plan Instagram content with captions and hashtags",
+    "Set up WhatsApp Business replies and enquiry flow",
+    "Build simple lead generation forms and follow-up process",
+    "Automate repetitive marketing and business tasks"
+  ];
   const joinItems = ["Students", "Job seekers", "Business owners", "Freelancers"];
   const flow = ["Register", "Attend Live Workshop", "Start using AI"];
   const faqs = [
@@ -115,7 +122,7 @@ export default function Home() {
       <section className="section bg-green-50/70">
         <div className="container-max grid gap-10 lg:grid-cols-2">
           <div>
-            <SectionTitle eyebrow="What You Will Learn" title="Hands-on AI skills for daily work and digital growth" text="The workshop style is practical, tool-based and designed for learners who want usable outcomes quickly." />
+            <SectionTitle eyebrow="What You Will Practice" title="Practical AI tasks you can use immediately" text="Every topic is connected to a real output, so learners understand what to create, where to use it and how it helps career or business growth." />
             <div className="grid gap-4 sm:grid-cols-2">
               {learnItems.map((item) => (
                 <div key={item} className="flex items-center gap-3 rounded-2xl bg-white p-4 font-bold text-slate-700 shadow-sm">
