@@ -40,14 +40,17 @@ export async function sendLeadEmails(lead) {
     <p><strong>Message:</strong> ${escapeHtml(lead.message)}</p>
   `;
 
-  await Promise.all([
+  const emails = [
     mailer.sendMail({
       from: `"WhatsUpCloud" <${process.env.GMAIL_USER}>`,
       to: process.env.ADMIN_EMAIL,
       subject: "New Lead \u2013 WhatsUpCloud",
       html: adminHtml
-    }),
-    mailer.sendMail({
+    })
+  ];
+
+  if (lead.email) {
+    emails.push(mailer.sendMail({
       from: `"WhatsUpCloud" <${process.env.GMAIL_USER}>`,
       to: lead.email,
       subject: "Registration Submitted",
@@ -61,6 +64,8 @@ export async function sendLeadEmails(lead) {
         "Team WhatsUpCloud",
         "Powered by Inovalytics Technology"
       ].join("\n")
-    })
-  ]);
+    }));
+  }
+
+  await Promise.all(emails);
 }
