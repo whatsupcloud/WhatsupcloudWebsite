@@ -2,6 +2,9 @@ import { Instagram, Mail, Youtube } from "lucide-react";
 import { Link } from "react-router-dom";
 import logo from "../assets/whatsupcloud-logo.png";
 
+const instagramUrl = "https://www.instagram.com/whats_upcloud/";
+const emailAddress = "whatsupcloud26@gmail.com";
+
 export default function Footer() {
   return (
     <footer className="border-t border-slate-100 bg-primary text-white">
@@ -33,16 +36,19 @@ export default function Footer() {
         <div>
           <p className="font-bold text-accent">Connect</p>
           <div className="mt-4 flex gap-3">
-            <a aria-label="Instagram" className="grid h-10 w-10 place-items-center rounded-full bg-white/10 transition hover:-translate-y-1 hover:bg-accent hover:text-primary" href="https://instagram.com" target="_blank" rel="noreferrer">
+            <a aria-label="Instagram" className="grid h-10 w-10 place-items-center rounded-full bg-white/10 transition hover:-translate-y-1 hover:bg-accent hover:text-primary" href={instagramUrl} target="_blank" rel="noreferrer">
               <Instagram size={18} />
             </a>
             <a aria-label="YouTube" className="grid h-10 w-10 place-items-center rounded-full bg-white/10 transition hover:-translate-y-1 hover:bg-accent hover:text-primary" href="https://youtube.com" target="_blank" rel="noreferrer">
               <Youtube size={18} />
             </a>
-            <a aria-label="Email" className="grid h-10 w-10 place-items-center rounded-full bg-white/10 transition hover:-translate-y-1 hover:bg-accent hover:text-primary" href="mailto:whatsupcloud26@gmail.com">
+            <a aria-label="Email" className="grid h-10 w-10 place-items-center rounded-full bg-white/10 transition hover:-translate-y-1 hover:bg-accent hover:text-primary" href={`mailto:${emailAddress}`}>
               <Mail size={18} />
             </a>
           </div>
+          <a href={`mailto:${emailAddress}`} className="mt-4 inline-flex text-sm font-semibold text-blue-50 transition hover:text-accent">
+            {emailAddress}
+          </a>
         </div>
         <div className="md:col-span-3 grid gap-5 border-t border-white/10 pt-8 md:grid-cols-2">
           <div>

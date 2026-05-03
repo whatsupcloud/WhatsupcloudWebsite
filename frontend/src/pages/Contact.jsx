@@ -1,5 +1,9 @@
+import { Instagram, Mail } from "lucide-react";
 import EnquiryForm from "../components/EnquiryForm.jsx";
 import SectionTitle from "../components/SectionTitle.jsx";
+
+const instagramUrl = "https://www.instagram.com/whats_upcloud/";
+const emailAddress = "whatsupcloud26@gmail.com";
 
 export default function Contact() {
   return (
@@ -10,8 +14,13 @@ export default function Contact() {
           <div className="rounded-3xl bg-primary p-6 text-white shadow-premium">
             <p className="text-sm font-bold text-green-100">WhatsUpCloud</p>
             <p className="mt-3 text-2xl font-black">AI Training Institute</p>
-            <a href="mailto:whatsupcloud26@gmail.com" className="mt-5 inline-flex rounded-2xl bg-white/10 px-4 py-3 text-sm font-black text-white transition hover:bg-white/20">
-              whatsupcloud26@gmail.com
+            <a href={`mailto:${emailAddress}`} className="mt-5 inline-flex items-center gap-2 rounded-2xl bg-white/10 px-4 py-3 text-sm font-black text-white transition hover:bg-white/20">
+              <Mail size={17} />
+              {emailAddress}
+            </a>
+            <a href={instagramUrl} target="_blank" rel="noreferrer" className="mt-3 inline-flex items-center gap-2 rounded-2xl bg-white/10 px-4 py-3 text-sm font-black text-white transition hover:bg-white/20">
+              <Instagram size={17} />
+              Follow WhatsUpCloud on Instagram
             </a>
             <p className="mt-4 text-sm leading-6 text-blue-50">Powered by Inovalytics Technology</p>
           </div>
