@@ -41,7 +41,7 @@ export default function Footer() {
         </div>
         <div>
           <p className="font-bold text-accent">Connect</p>
-          <div className="mt-3 flex items-center gap-4">
+          <div className="mt-3 flex flex-col items-start gap-3">
             {socialLinks.map(([label, href, icon, alt]) => (
               <a key={label} aria-label={label} className="transition hover:-translate-y-1 hover:opacity-80" href={href} target={href.startsWith("http") ? "_blank" : undefined} rel={href.startsWith("http") ? "noreferrer" : undefined}>
                 <img src={icon} alt={alt} loading="lazy" decoding="async" className="h-8 w-8 object-contain" />
@@ -51,11 +51,6 @@ export default function Footer() {
           <a href={`mailto:${emailAddress}`} className="mt-3 inline-flex text-sm font-semibold text-blue-50 transition hover:text-accent">
             {emailAddress}
           </a>
-        </div>
-        <div className="border-t border-white/10 pt-5 text-sm leading-6 text-blue-50 md:col-span-3">
-          <span className="font-bold text-accent">Vision:</span> Practical, affordable and accessible AI education.
-          <span className="mx-2 hidden text-white/30 sm:inline">|</span>
-          <span className="block sm:inline"><span className="font-bold text-accent">Mission:</span> Real AI skills, automation and career support.</span>
         </div>
       </div>
       <div className="border-t border-white/10 px-5 py-3 text-center text-sm text-blue-100">
