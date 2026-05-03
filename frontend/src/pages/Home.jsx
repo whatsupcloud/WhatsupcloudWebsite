@@ -18,12 +18,12 @@ export default function Home() {
     ["Career Support", "/contact"]
   ];
   const programs = [
-    ["Courses", "AI, DevOps, Cloud, MLOps and Full Stack learning paths.", "/courses", BookOpen],
-    ["Internship", "Project-based internships with certificate and profile support.", "/internship", GraduationCap],
-    ["Workshop", "Practical AI workshops for students, professionals and businesses.", "/workshop", Lightbulb],
-    ["E-Book", "Course-wise guides and learning resources.", "/ebook", Award],
-    ["Career Support", "Resume, LinkedIn, portfolio and mock interview guidance.", "/contact", BriefcaseBusiness],
-    ["Enquiry", "Get complete course details from the team.", "/contact", Workflow]
+    ["Courses", "AI, DevOps, Cloud, MLOps and Full Stack learning paths.", "/courses", BookOpen, "View Courses"],
+    ["Internship", "Project-based internships with certificate and profile support.", "/internship", GraduationCap, "View Internship"],
+    ["Workshop", "Practical AI workshops for students, professionals and businesses.", "/workshop", Lightbulb, "View Workshops"],
+    ["E-Book", "Course-wise guides and learning resources.", "/ebook", Award, "View E-Books"],
+    ["Career Support", "Resume, LinkedIn, portfolio and mock interview guidance.", "/contact", BriefcaseBusiness, "Get Guidance"],
+    ["Enquiry", "Get complete course details from the team.", "/contact", Workflow, "Enquire Now"]
   ];
   const faqs = [
     ["Can beginners join?", "Yes. The training is beginner friendly and no prior experience is required."],
@@ -84,12 +84,14 @@ export default function Home() {
         <div className="container-max">
           <SectionTitle eyebrow="Explore" title="Choose the right path" text="Home page is kept simple. Detailed information is available on separate pages." center />
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-            {programs.map(([title, text, path, Icon]) => (
+            {programs.map(([title, text, path, Icon, action]) => (
               <Link key={title} to={path} className="rounded-3xl border border-slate-100 bg-white p-5 shadow-sm transition hover:-translate-y-1 hover:shadow-premium sm:p-6">
                 <Icon className="text-brandGreen" size={30} />
                 <h2 className="mt-4 text-xl font-black text-primary">{title}</h2>
                 <p className="mt-2 text-sm leading-6 text-slate-600">{text}</p>
-                <p className="mt-4 text-sm font-black text-brandGreen">Open page</p>
+                <span className="mt-5 inline-flex rounded-full bg-brandGreen px-4 py-2 text-sm font-black text-white">
+                  {action}
+                </span>
               </Link>
             ))}
           </div>
