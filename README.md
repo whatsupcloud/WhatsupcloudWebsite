@@ -48,6 +48,26 @@ Backend health: `http://localhost:5000/health`
 
 ## Deployment
 
+## Git Workflow
+
+Use three branches so changes do not go directly to production:
+
+- `local`: daily development and testing on your PC.
+- `staging`: preview/testing branch before final release.
+- `prod`: production-ready branch only after staging is checked.
+
+Recommended flow:
+
+```bash
+git switch local
+git add .
+git commit -m "Describe the change"
+git switch staging
+git merge local
+git switch prod
+git merge staging
+```
+
 ### Frontend on Vercel
 
 - Root directory: `frontend`
