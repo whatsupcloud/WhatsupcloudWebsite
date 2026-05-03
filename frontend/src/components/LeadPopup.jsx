@@ -11,6 +11,16 @@ export default function LeadPopup() {
     return () => window.clearTimeout(timer);
   }, [dismissed]);
 
+  const scrollToForm = () => {
+    const form = document.getElementById("enquiry-form");
+    setDismissed(true);
+    if (form) {
+      form.scrollIntoView({ behavior: "smooth", block: "start" });
+      return;
+    }
+    window.location.href = "/contact#enquiry-form";
+  };
+
   if (!open || dismissed) return null;
 
   return (
@@ -23,7 +33,7 @@ export default function LeadPopup() {
       >
         <X size={17} />
       </button>
-      <p className="eyebrow">Limited Seats Available</p>
+      <p className="eyebrow">AI Training Enquiry</p>
       <h3 className="mt-3 pr-8 text-2xl font-black text-primary">Want to Learn AI?</h3>
       <p className="mt-2 text-sm leading-6 text-slate-600">Fill the form and our team will contact you.</p>
       <button type="button" onClick={scrollToForm} className="btn-primary mt-5 w-full">
@@ -32,12 +42,3 @@ export default function LeadPopup() {
     </div>
   );
 }
-  const scrollToForm = () => {
-    const form = document.getElementById("enquiry-form");
-    setDismissed(true);
-    if (form) {
-      form.scrollIntoView({ behavior: "smooth", block: "start" });
-      return;
-    }
-    window.location.href = "/contact#enquiry-form";
-  };
