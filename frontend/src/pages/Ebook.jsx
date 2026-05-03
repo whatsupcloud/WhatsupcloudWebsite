@@ -40,7 +40,6 @@ export default function Ebook() {
         <SectionTitle
           eyebrow="E-Book Library"
           title="Course-wise practical guides for every WhatsUpCloud program"
-          text="Select an e-book to view details and request purchase information. Course prices are not displayed publicly."
           center
         />
 
