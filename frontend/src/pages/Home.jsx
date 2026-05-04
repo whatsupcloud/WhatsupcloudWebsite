@@ -73,10 +73,10 @@ export default function Home() {
               </div>
               <div className="px-2 py-4 text-center">
                 <p className="text-[11px] font-black uppercase tracking-[0.12em] text-brandGreen sm:text-xs">
-                  Founder & AI Mentor
+                  Founder & CEO
                 </p>
                 <p className="mt-2 text-base font-black text-primary sm:text-lg">
-                  Women Entrepreneur | AI Trainer | Career Growth Guide
+                  Women Entrepreneur | Business Growth Mentor
                 </p>
               </div>
             </div>
