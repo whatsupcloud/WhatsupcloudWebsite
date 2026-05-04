@@ -14,6 +14,7 @@ const imageMap = {
   "Generative AI": courseGenai,
   "AI Digital Marketing": courseMarketing,
   "AI Prompt Engineering": courseData,
+  "Multi Agent AI": courseGenai,
   "AI Automation": courseDevops,
   "AI Content Creation": courseMarketing,
   "AI for Business": courseCloud,

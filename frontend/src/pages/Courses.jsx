@@ -13,6 +13,7 @@ export default function Courses() {
     ["Generative AI", "AI", "Create content, prompts, images, workflows and practical AI use cases.", courseGenai, ["Prompting", "AI tools", "Projects"]],
     ["AI Digital Marketing", "Marketing", "Use AI for campaigns, social content, posters, lead generation and growth workflows.", courseMarketing, ["Content", "Campaigns", "Leads"]],
     ["AI Prompt Engineering", "Prompting", "Build better prompts for research, content, business tasks and automation.", courseData, ["Prompts", "Templates", "Output quality"]],
+    ["Multi Agent AI", "AI Agents", "Build practical agent workflows for research, planning, automation and task execution.", courseGenai, ["Agents", "Workflows", "Automation"]],
     ["AI Automation", "Automation", "Design practical automations for repeated business and career tasks.", courseDevops, ["Workflows", "No-code", "Productivity"]],
     ["AI for Business", "Business", "Apply AI to operations, sales, support, reporting and team productivity.", courseCloud, ["Business AI", "Reporting", "Support"]],
     ["AI Project Development", "Projects", "Build portfolio-ready AI projects with real-world problem statements.", courseSoftware, ["Portfolio", "Development", "Use cases"]]
