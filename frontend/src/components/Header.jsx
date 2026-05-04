@@ -19,8 +19,8 @@ export default function Header() {
   return (
     <header className="sticky top-0 z-40 border-b border-slate-100 bg-white/92 backdrop-blur">
       <div className="container-max flex h-20 items-center justify-between px-5 sm:px-8 lg:h-24 lg:px-12">
-        <Link to="/" className="flex items-center" onClick={() => setOpen(false)}>
-          <img src={logo} alt="WhatsUpCloud logo" className="h-14 w-auto object-contain sm:h-16 lg:h-18" />
+        <Link to="/" className="flex min-w-0 items-center" onClick={() => setOpen(false)}>
+          <img src={logo} alt="WhatsUpCloud logo" className="h-auto w-[180px] max-w-[58vw] object-contain sm:w-[230px] lg:w-[285px]" />
         </Link>
 
         <nav className="hidden items-center gap-6 lg:flex">
