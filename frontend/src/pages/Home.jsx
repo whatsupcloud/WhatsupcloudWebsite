@@ -35,7 +35,7 @@ export default function Home() {
   return (
     <>
       <section className="section orb-free-gradient">
-        <div className="container-max grid items-center gap-10 lg:grid-cols-[1.02fr_0.98fr]">
+        <div className="container-max grid items-center gap-10 lg:grid-cols-[1.12fr_0.88fr]">
           <div>
             <p className="eyebrow">WhatsUpCloud AI Training Institute</p>
             <h1 className="mt-4 max-w-4xl text-4xl font-black leading-tight tracking-normal text-primary sm:text-5xl lg:text-6xl">
@@ -66,7 +66,7 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="relative">
+          <div className="relative mx-auto w-full max-w-[360px] sm:max-w-[400px] lg:mx-0 lg:justify-self-end">
             <div className="overflow-hidden rounded-[1.5rem] bg-white p-3 shadow-premium sm:rounded-[2rem]">
               <div className="aspect-[4/5] overflow-hidden rounded-[1.2rem] bg-blue-50 sm:rounded-[1.5rem]">
                 <img src={trainerPhoto} alt="Founder and mentor" loading="eager" decoding="async" className="h-full w-full object-cover object-center" />
