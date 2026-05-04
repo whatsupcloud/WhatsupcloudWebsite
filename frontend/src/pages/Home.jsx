@@ -68,12 +68,16 @@ export default function Home() {
 
           <div className="relative">
             <div className="overflow-hidden rounded-[1.5rem] bg-white p-3 shadow-premium sm:rounded-[2rem]">
-              <div className="relative aspect-[4/5] overflow-hidden rounded-[1.2rem] bg-blue-50 sm:rounded-[1.5rem]">
+              <div className="aspect-[4/5] overflow-hidden rounded-[1.2rem] bg-blue-50 sm:rounded-[1.5rem]">
                 <img src={trainerPhoto} alt="Founder and mentor" loading="eager" decoding="async" className="h-full w-full object-cover object-center" />
-                <div className="absolute inset-x-3 bottom-3 rounded-2xl bg-white/92 p-4 shadow-xl backdrop-blur sm:inset-x-5 sm:bottom-5">
-                  <p className="text-[11px] font-black uppercase tracking-[0.12em] text-brandGreen sm:text-xs">Founder | Mentor | Woman Entrepreneur | AI Expert</p>
-                  <p className="mt-1 text-base font-black text-primary sm:text-lg">Practical learning with guided support</p>
-                </div>
+              </div>
+              <div className="px-2 py-4 text-center">
+                <p className="text-[11px] font-black uppercase tracking-[0.12em] text-brandGreen sm:text-xs">
+                  Founder & AI Mentor
+                </p>
+                <p className="mt-2 text-base font-black text-primary sm:text-lg">
+                  Women Entrepreneur | AI Trainer | Career Growth Guide
+                </p>
               </div>
             </div>
           </div>
